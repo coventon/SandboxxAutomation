@@ -89,7 +89,7 @@ public class AppiumServer {
             // If connection is successful, the server is already running
             return true;
         }catch (java.io.IOException e){
-            // If the socket connection fails, the server is not running
+            /// If the socket connection fails, the server is not running
             System.out.println(">>> Server is not running...");
             return false;
         }
