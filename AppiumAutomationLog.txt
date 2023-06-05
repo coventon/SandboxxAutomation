@@ -1,0 +1,1278 @@
+2023-06-04 22:37:17:183 [Appium] Welcome to Appium v2.0.0-beta.71
+2023-06-04 22:37:17:184 [Appium] Non-default server args:
+2023-06-04 22:37:17:185 [Appium] { address: '127.0.0.1', localTimezone: true }
+2023-06-04 22:37:17:185 [Appium] Attempting to load driver xcuitest...
+2023-06-04 22:37:17:186 [Appium] Requiring driver at /Users/Roman_Nejouta/.appium/node_modules/appium-xcuitest-driver
+2023-06-04 22:37:17:831 [Appium] Attempting to load driver uiautomator2...
+2023-06-04 22:37:17:832 [Appium] Requiring driver at /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver
+2023-06-04 22:37:18:204 [Appium] Appium REST http interface listener started on 127.0.0.1:4723
+2023-06-04 22:37:18:204 [Appium] Available drivers:
+2023-06-04 22:37:18:204 [Appium]   - xcuitest@4.30.1 (automationName 'XCUITest')
+2023-06-04 22:37:18:204 [Appium]   - uiautomator2@2.25.1 (automationName 'UiAutomator2')
+2023-06-04 22:37:18:204 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2023-06-04 22:37:18:291 [HTTP] --> GET /status
+2023-06-04 22:37:18:291 [HTTP] {}
+2023-06-04 22:37:18:292 [AppiumDriver@6729] Calling AppiumDriver.getStatus() with args: []
+2023-06-04 22:37:18:293 [AppiumDriver@6729] Responding to client with driver.getStatus() result: {"build":{"version":"2.0.0-beta.71"}}
+2023-06-04 22:37:18:295 [HTTP] <-- GET /status 200 3 ms - 47
+2023-06-04 22:37:18:295 [HTTP] 
+2023-06-04 22:37:18:298 [HTTP] --> GET /status
+2023-06-04 22:37:18:298 [HTTP] {}
+2023-06-04 22:37:18:298 [AppiumDriver@6729] Calling AppiumDriver.getStatus() with args: []
+2023-06-04 22:37:18:298 [AppiumDriver@6729] Responding to client with driver.getStatus() result: {"build":{"version":"2.0.0-beta.71"}}
+2023-06-04 22:37:18:299 [HTTP] <-- GET /status 200 1 ms - 47
+2023-06-04 22:37:18:299 [HTTP] 
+2023-06-04 22:37:21:624 [HTTP] Request idempotency key: a9e4a8a3-4f4f-418f-a44d-1aec07020bdf
+2023-06-04 22:37:21:629 [HTTP] --> POST /session
+2023-06-04 22:37:21:629 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appium:appActivity":"com.sandboxx.android.features.startup.SplashActivity","appium:appPackage":"com.sandboxx.android.dev","appium:appWaitForLaunch":true,"appium:autoGrantPermissions":true,"appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:newCommandTimeout":8,"appium:noReset":false,"appium:platformVersion":"13.0","platformName":"ANDROID"}}}
+2023-06-04 22:37:21:629 [AppiumDriver@6729] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appium:appActivity":"com.sandboxx.android.features.startup.SplashActivity","appium:appPackage":"com.sandboxx.android.dev","appium:appWaitForLaunch":true,"appium:autoGrantPermissions":true,"appium:automationName":"UiAutomator2","appium:deviceName":"emulator-5554","appium:newCommandTimeout":8,"appium:noReset":false,"appium:platformVersion":"13.0","platformName":"ANDROID"}}]
+2023-06-04 22:37:21:630 [AppiumDriver@6729] Event 'newSessionRequested' logged at 1685936241630 (22:37:21 GMT-0500 (Central Daylight Time))
+2023-06-04 22:37:21:631 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'ANDROID'
+2023-06-04 22:37:21:631 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2023-06-04 22:37:21:631 [Appium] Will require it at /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver
+2023-06-04 22:37:21:631 [Appium] Requiring driver at /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver
+2023-06-04 22:37:21:631 [AppiumDriver@6729] Appium v2.0.0-beta.71 creating new AndroidUiautomator2Driver (v2.25.1) session
+2023-06-04 22:37:21:631 [AppiumDriver@6729] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2023-06-04 22:37:21:631 [AppiumDriver@6729] Appium's BaseDriver version is 9.3.10
+2023-06-04 22:37:21:631 [AppiumDriver@6729] AndroidUiautomator2Driver's BaseDriver version is 9.3.10
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6] Creating session with W3C capabilities: {
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]   "alwaysMatch": {
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "platformName": "ANDROID",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:app": "/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:appActivity": "com.sandboxx.android.features.startup.SplashActivity",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:appPackage": "com.sandboxx.android.dev",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:appWaitForLaunch": true,
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:autoGrantPermissions": true,
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:automationName": "UiAutomator2",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:deviceName": "emulator-5554",
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:newCommandTimeout": 8,
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:noReset": false,
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     "appium:platformVersion": "13.0"
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]   },
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]   "firstMatch": [
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]     {}
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6]   ]
+2023-06-04 22:37:21:632 [AndroidUiautomator2Driver@eef6] }
+2023-06-04 22:37:21:635 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Session created with session id: 8d07b0c9-83dd-4497-ad48-8f36a80208d3
+2023-06-04 22:37:21:635 [BaseDriver] Using local app '/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk'
+2023-06-04 22:37:21:711 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Checking whether app is actually present
+2023-06-04 22:37:21:714 [ADB] Found 2 'build-tools' folders under '/Users/Roman_Nejouta/Library/Android/sdk' (newest first):
+2023-06-04 22:37:21:714 [ADB]     /Users/Roman_Nejouta/Library/Android/sdk/build-tools/33.0.2
+2023-06-04 22:37:21:715 [ADB]     /Users/Roman_Nejouta/Library/Android/sdk/build-tools/30.0.3
+2023-06-04 22:37:21:715 [ADB] Using 'adb' from '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb'
+2023-06-04 22:37:21:715 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2023-06-04 22:37:21:726 [AndroidDriver] Retrieving device list
+2023-06-04 22:37:21:726 [ADB] Trying to find a connected android device
+2023-06-04 22:37:21:726 [ADB] Getting connected devices
+2023-06-04 22:37:21:734 [ADB] Connected devices: [{"udid":"emulator-5554","state":"device"}]
+2023-06-04 22:37:21:734 [AndroidDriver] Looking for a device with Android '13.0.0'
+2023-06-04 22:37:21:734 [ADB] Setting device id to emulator-5554
+2023-06-04 22:37:21:734 [ADB] Getting device platform version
+2023-06-04 22:37:21:734 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2023-06-04 22:37:21:759 [ADB] Current device property 'ro.build.version.release': 13
+2023-06-04 22:37:21:759 [AndroidDriver] Using device: emulator-5554
+2023-06-04 22:37:21:760 [ADB] Using 'adb' from '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb'
+2023-06-04 22:37:21:760 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2023-06-04 22:37:21:767 [ADB] Setting device id to emulator-5554
+2023-06-04 22:37:21:768 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2023-06-04 22:37:21:785 [ADB] Current device property 'ro.build.version.sdk': 33
+2023-06-04 22:37:21:785 [ADB] Getting device platform version
+2023-06-04 22:37:21:785 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2023-06-04 22:37:21:804 [ADB] Current device property 'ro.build.version.release': 13
+2023-06-04 22:37:21:804 [ADB] Device API level: 33
+2023-06-04 22:37:21:804 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Relaxing hidden api policy
+2023-06-04 22:37:21:804 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2023-06-04 22:37:21:845 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2023-06-04 22:37:21:854 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2023-06-04 22:37:21:867 [AndroidDriver] Pushing settings apk to device...
+2023-06-04 22:37:21:867 [ADB] Getting install status for io.appium.settings
+2023-06-04 22:37:21:867 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2023-06-04 22:37:21:898 [ADB] 'io.appium.settings' is installed
+2023-06-04 22:37:21:898 [ADB] Getting package info for 'io.appium.settings'
+2023-06-04 22:37:21:898 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2023-06-04 22:37:21:925 [ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.0.3' >= '5.0.3')
+2023-06-04 22:37:21:926 [ADB] There is no need to install/upgrade '/Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2023-06-04 22:37:21:926 [ADB] Getting IDs of all 'io.appium.settings' processes
+2023-06-04 22:37:21:926 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'pgrep --help; echo $?''
+2023-06-04 22:37:21:943 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pgrep -f \(\[\[:blank:\]\]\|\^\)io\.appium\.settings\(\[\[:blank:\]\]\|\$\)'
+2023-06-04 22:37:21:964 [AndroidDriver] io.appium.settings is already running. There is no need to reset its permissions.
+2023-06-04 22:37:21:964 [Logcat] Starting logs capture with command: /Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2023-06-04 22:37:21:982 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Forwarding UiAutomator2 Server port 6790 to local port 8200
+2023-06-04 22:37:21:983 [ADB] Forwarding system: 8200 to device: 6790
+2023-06-04 22:37:21:983 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8200 tcp:6790'
+2023-06-04 22:37:21:993 [ADB] Getting install status for io.appium.uiautomator2.server
+2023-06-04 22:37:21:993 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2023-06-04 22:37:22:014 [ADB] 'io.appium.uiautomator2.server' is installed
+2023-06-04 22:37:22:014 [ADB] Getting package info for 'io.appium.uiautomator2.server'
+2023-06-04 22:37:22:014 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2023-06-04 22:37:22:186 [ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('5.8.2' >= '5.8.2')
+2023-06-04 22:37:22:186 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] io.appium.uiautomator2.server installation state: sameVersionInstalled
+2023-06-04 22:37:22:186 [ADB] Checking app cert for /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.8.2.apk
+2023-06-04 22:37:22:211 [ADB] Using 'apksigner.jar' from '/Users/Roman_Nejouta/Library/Android/sdk/build-tools/33.0.2/lib/apksigner.jar'
+2023-06-04 22:37:22:212 [ADB] Starting apksigner: /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/bin/java -Xmx1024M -Xss1m -jar /Users/Roman_Nejouta/Library/Android/sdk/build-tools/33.0.2/lib/apksigner.jar verify --print-certs /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.8.2.apk
+2023-06-04 22:37:23:350 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+2023-06-04 22:37:23:350 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+2023-06-04 22:37:23:351 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+2023-06-04 22:37:23:351 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+2023-06-04 22:37:23:351 [ADB] 
+2023-06-04 22:37:23:351 [ADB] sha256 hash did match for 'appium-uiautomator2-server-v5.8.2.apk'
+2023-06-04 22:37:23:351 [ADB] '/Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.8.2.apk' is signed with the default certificate
+2023-06-04 22:37:23:351 [ADB] Getting install status for io.appium.uiautomator2.server.test
+2023-06-04 22:37:23:351 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server.test'
+2023-06-04 22:37:23:385 [ADB] 'io.appium.uiautomator2.server.test' is installed
+2023-06-04 22:37:23:385 [ADB] Checking app cert for /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
+2023-06-04 22:37:23:387 [ADB] Starting apksigner: /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/bin/java -Xmx1024M -Xss1m -jar /Users/Roman_Nejouta/Library/Android/sdk/build-tools/33.0.2/lib/apksigner.jar verify --print-certs /Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
+2023-06-04 22:37:23:742 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+2023-06-04 22:37:23:742 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+2023-06-04 22:37:23:742 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+2023-06-04 22:37:23:742 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+2023-06-04 22:37:23:742 [ADB] 
+2023-06-04 22:37:23:742 [ADB] sha256 hash did match for 'appium-uiautomator2-server-debug-androidTest.apk'
+2023-06-04 22:37:23:742 [ADB] '/Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk' is signed with the default certificate
+2023-06-04 22:37:23:742 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Server packages are not going to be (re)installed
+2023-06-04 22:37:23:743 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 30000ms for services to be available
+2023-06-04 22:37:23:743 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2023-06-04 22:37:23:779 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2023-06-04 22:37:23:780 [ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2023-06-04 22:37:23:781 [ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2023-06-04 22:37:23:781 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2023-06-04 22:37:23:818 [ADB] Checking app cert for /Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk
+2023-06-04 22:37:23:882 [ADB] Starting apksigner: /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/bin/java -Xmx1024M -Xss1m -jar /Users/Roman_Nejouta/Library/Android/sdk/build-tools/33.0.2/lib/apksigner.jar verify --print-certs /Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk
+2023-06-04 22:37:24:700 [ADB] apksigner stdout: Signer #1 certificate DN: CN=Sandboxx Android, OU=Engineering, O=Sandboxx, L=Arlington, ST=VA, C=US
+2023-06-04 22:37:24:700 [ADB] Signer #1 certificate SHA-256 digest: 9862b84ea11cea843a2fae846b363f4d584a1d1f5221b0490341ad213fe897a1
+2023-06-04 22:37:24:700 [ADB] Signer #1 certificate SHA-1 digest: db2020a89c2dba3b4d766ddda241195732f896e7
+2023-06-04 22:37:24:700 [ADB] Signer #1 certificate MD5 digest: a35b1afeb21978643f5b506151e19806
+2023-06-04 22:37:24:700 [ADB] 
+2023-06-04 22:37:24:700 [ADB] '/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk' is signed with a non-default certificate
+2023-06-04 22:37:24:700 [ADB] Getting install status for com.sandboxx.android.dev
+2023-06-04 22:37:24:700 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:24:741 [ADB] 'com.sandboxx.android.dev' is installed
+2023-06-04 22:37:24:741 [ADB] Getting package info for 'com.sandboxx.android.dev'
+2023-06-04 22:37:24:741 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:24:767 [ADB] The version name of the installed 'com.sandboxx.android.dev' is greater or equal to the application version name ('16.2.0' >= '16.2.0')
+2023-06-04 22:37:24:767 [ADB] There is no need to install/upgrade '/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk'
+2023-06-04 22:37:24:767 [AndroidDriver] Performing fast reset on 'com.sandboxx.android.dev'
+2023-06-04 22:37:24:767 [ADB] Getting install status for com.sandboxx.android.dev
+2023-06-04 22:37:24:767 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:24:786 [ADB] 'com.sandboxx.android.dev' is installed
+2023-06-04 22:37:24:786 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.sandboxx.android.dev'
+2023-06-04 22:37:24:813 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm clear com.sandboxx.android.dev'
+2023-06-04 22:37:24:910 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:24:932 [ADB] Retrieving requested permissions
+2023-06-04 22:37:24:934 [ADB] Retrieved 20 permissions from requested group
+2023-06-04 22:37:24:935 [ADB] Retrieving granted permissions
+2023-06-04 22:37:24:935 [ADB] Retrieved 9 permissions from install,runtime groups
+2023-06-04 22:37:24:935 [ADB] Granting permissions ["android.permission.READ_EXTERNAL_STORAGE","android.permission.CAMERA","android.permission.READ_CONTACTS","android.permission.ACCESS_MEDIA_LOCATION","android.permission.ACCESS_COARSE_LOCATION","android.permission.POST_NOTIFICATIONS","android.permission.READ_MEDIA_IMAGES","android.permission.ACCESS_FINE_LOCATION","android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE","android.permission.READ_MEDIA_AUDIO","android.permission.READ_MEDIA_VIDEO"] to 'com.sandboxx.android.dev'
+2023-06-04 22:37:24:935 [ADB] Got the following command chunks to execute: [["pm","grant","com.sandboxx.android.dev","android.permission.READ_EXTERNAL_STORAGE",";","pm","grant","com.sandboxx.android.dev","android.permission.CAMERA",";","pm","grant","com.sandboxx.android.dev","android.permission.READ_CONTACTS",";","pm","grant","com.sandboxx.android.dev","android.permission.ACCESS_MEDIA_LOCATION",";","pm","grant","com.sandboxx.android.dev","android.permission.ACCESS_COARSE_LOCATION",";","pm","grant","com.sandboxx.android.dev","android.permission.POST_NOTIFICATIONS",";","pm","grant","com.sandboxx.android.dev","android.permission.READ_MEDIA_IMAGES",";","pm","grant","com.sandboxx.android.dev","android.permission.ACCESS_FINE_LOCATION",";","pm","grant","com.sandboxx.android.dev","android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",";","pm","grant","com.sandboxx.android.dev","android.permission.READ_MEDIA_AUDIO",";","pm","grant","com.sandboxx.android.dev","android.permission.READ_MEDIA_VIDEO",";"]]
+2023-06-04 22:37:24:935 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm grant com.sandboxx.android.dev android.permission.READ_EXTERNAL_STORAGE ; pm grant com.sandboxx.android.dev android.permission.CAMERA ; pm grant com.sandboxx.android.dev android.permission.READ_CONTACTS ; pm grant com.sandboxx.android.dev android.permission.ACCESS_MEDIA_LOCATION ; pm grant com.sandboxx.android.dev android.permission.ACCESS_COARSE_LOCATION ; pm grant com.sandboxx.android.dev android.permission.POST_NOTIFICATIONS ; pm grant com.sandboxx.android.dev android.permission.READ_MEDIA_IMAGES ; pm grant com.sandboxx.android.dev android.permission.ACCESS_FINE_LOCATION ; pm grant com.sandboxx.android.dev android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE ; pm grant com.sandboxx.android.dev android.permission.READ_MEDIA_AUDIO ; pm grant com.sandboxx.android.dev android.permission.READ_MEDIA_VIDEO ;'
+2023-06-04 22:37:25:094 [AndroidDriver] Performed fast reset on the installed 'com.sandboxx.android.dev' application (stop and clear)
+2023-06-04 22:37:25:095 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Performing shallow cleanup of automation leftovers
+2023-06-04 22:37:25:104 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] No obsolete sessions have been detected (socket hang up)
+2023-06-04 22:37:25:105 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2023-06-04 22:37:25:134 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Starting UIAutomator2 server 5.8.2
+2023-06-04 22:37:25:134 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Using UIAutomator2 server from '/Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.8.2.apk' and test from '/Users/Roman_Nejouta/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2023-06-04 22:37:25:135 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 30000ms for UiAutomator2 to be online...
+2023-06-04 22:37:25:135 [ADB] Creating ADB subprocess with args: ["-P",5037,"-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics",true,"io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2023-06-04 22:37:25:138 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/status' to command name 'getStatus'
+2023-06-04 22:37:25:138 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2023-06-04 22:37:25:144 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] socket hang up
+2023-06-04 22:37:25:745 [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
+2023-06-04 22:37:26:146 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/status' to command name 'getStatus'
+2023-06-04 22:37:26:147 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2023-06-04 22:37:26:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] socket hang up
+2023-06-04 22:37:27:153 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/status' to command name 'getStatus'
+2023-06-04 22:37:27:153 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2023-06-04 22:37:27:174 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"None","value":{"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2023-06-04 22:37:27:174 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] The initialization of the instrumentation process took 2039ms
+2023-06-04 22:37:27:174 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/session' to command name 'createSession'
+2023-06-04 22:37:27:174 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /session] to [POST http://127.0.0.1:8200/session] with body: {"capabilities":{"firstMatch":[{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"platformVersion":"13.0"},"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"platformVersion":"13.0","deviceUDID":"emulator-5554"}],"alway...
+2023-06-04 22:37:27:188 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"capabilities":{"firstMatch":[{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"platformVersion":"13.0"},"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"p...
+2023-06-04 22:37:27:189 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Determined the downstream protocol as 'W3C'
+2023-06-04 22:37:27:196 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/appium/device/info] with no body
+2023-06-04 22:37:27:212 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"androidId":"89b4d97148cf010d","apiVersion":"33","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":420,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_arm64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":12000,"networkCapabilities":"NET_CAPABILITY_NOT_METERED,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_FOREGROUND,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-50,"transportTypes":"TRANSPORT_WIFI"},"detailedState":"CONNECTED","extraInfo":"","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":-1,"subtypeName":"","type":1,"typeName":"WIFI"},{"capabilities":{"SSID":null,"linkDownBandwidthKbps":4300,"linkUpstreamBandwidthKbps":1800,"networkCapabili...
+2023-06-04 22:37:27:212 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2023-06-04 22:37:27:244 [AndroidDriver] Screen already unlocked, doing nothing
+2023-06-04 22:37:27:245 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Starting 'com.sandboxx.android.dev/com.sandboxx.android.features.startup.SplashActivity and waiting for 'com.sandboxx.android.dev/com.sandboxx.android.features.startup.SplashActivity'
+2023-06-04 22:37:27:245 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -W -n com.sandboxx.android.dev/com.sandboxx.android.features.startup.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000'
+2023-06-04 22:37:28:419 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/appium/device/pixel_ratio] with no body
+2023-06-04 22:37:28:430 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":2.625}
+2023-06-04 22:37:28:431 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/appium/device/system_bars' to command name 'getSystemBars'
+2023-06-04 22:37:28:431 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/appium/device/system_bars] with no body
+2023-06-04 22:37:28:436 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"statusBar":136}}
+2023-06-04 22:37:28:436 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:28:436 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:28:442 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:28:442 [AppiumDriver@6729] New AndroidUiautomator2Driver session created successfully, session 8d07b0c9-83dd-4497-ad48-8f36a80208d3 added to master session list
+2023-06-04 22:37:28:443 [AppiumDriver@6729] Event 'newSessionStarted' logged at 1685936248443 (22:37:28 GMT-0500 (Central Daylight Time))
+2023-06-04 22:37:28:443 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Cached the protocol value 'W3C' for the new session 8d07b0c9-83dd-4497-ad48-8f36a80208d3
+2023-06-04 22:37:28:444 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.createSession() result: {"capabilities":{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"platformVersion":"13.0"},"platformName":"ANDROID","app":"/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk","appActivity":"com.sandboxx.android.features.startup.SplashActivity","appPackage":"com.sandboxx.android.dev","appWaitForLaunch":true,"autoGrantPermissions":true,"automationName":"UiAutomator2","deviceName":"emulator-5554","newCommandTimeout":8,"noReset":false,"platformVersion":"13","deviceUDID":"emulator-5554","deviceApiLevel":33,"devi...
+2023-06-04 22:37:28:445 [HTTP] <-- POST /session 200 6815 ms - 1302
+2023-06-04 22:37:28:445 [HTTP] 
+2023-06-04 22:37:28:497 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:28:497 [HTTP] {"using":"xpath","value":"//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageView"}
+2023-06-04 22:37:28:499 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageView","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:28:499 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:28:499 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:28:499 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:28:499 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"xpath","selector":"//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageView","context":"","multiple":false}
+2023-06-04 22:37:29:056 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000014","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000014"}}
+2023-06-04 22:37:29:056 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000014","ELEMENT":"00000000-0000-002f-ffff-ffff00000014"}
+2023-06-04 22:37:29:057 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 560 ms - 137
+2023-06-04 22:37:29:057 [HTTP] 
+2023-06-04 22:37:29:066 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000014/displayed
+2023-06-04 22:37:29:066 [HTTP] {}
+2023-06-04 22:37:29:069 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.elementDisplayed() with args: ["00000000-0000-002f-ffff-ffff00000014","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:069 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element/00000000-0000-002f-ffff-ffff00000014/attribute/displayed' to command name 'getAttribute'
+2023-06-04 22:37:29:069 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /element/00000000-0000-002f-ffff-ffff00000014/attribute/displayed] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff00000014/attribute/displayed] with no body
+2023-06-04 22:37:29:074 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":"true"}
+2023-06-04 22:37:29:074 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.elementDisplayed() result: true
+2023-06-04 22:37:29:075 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000014/displayed 200 8 ms - 14
+2023-06-04 22:37:29:075 [HTTP] 
+2023-06-04 22:37:29:081 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:29:081 [HTTP] {"using":"id","value":"com.sandboxx.android.dev:id/iv_landing_image"}
+2023-06-04 22:37:29:082 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["id","com.sandboxx.android.dev:id/iv_landing_image","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:082 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:29:082 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:29:082 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:29:082 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"id","selector":"com.sandboxx.android.dev:id/iv_landing_image","context":"","multiple":false}
+2023-06-04 22:37:29:088 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff0000001f","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000001f"}}
+2023-06-04 22:37:29:088 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000001f","ELEMENT":"00000000-0000-002f-ffff-ffff0000001f"}
+2023-06-04 22:37:29:088 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 7 ms - 137
+2023-06-04 22:37:29:088 [HTTP] 
+2023-06-04 22:37:29:090 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000001f/displayed
+2023-06-04 22:37:29:090 [HTTP] {}
+2023-06-04 22:37:29:091 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.elementDisplayed() with args: ["00000000-0000-002f-ffff-ffff0000001f","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:091 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element/00000000-0000-002f-ffff-ffff0000001f/attribute/displayed' to command name 'getAttribute'
+2023-06-04 22:37:29:091 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /element/00000000-0000-002f-ffff-ffff0000001f/attribute/displayed] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff0000001f/attribute/displayed] with no body
+2023-06-04 22:37:29:095 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":"true"}
+2023-06-04 22:37:29:095 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.elementDisplayed() result: true
+2023-06-04 22:37:29:096 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000001f/displayed 200 5 ms - 14
+2023-06-04 22:37:29:096 [HTTP] 
+2023-06-04 22:37:29:098 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:29:098 [HTTP] {"using":"id","value":"com.sandboxx.android.dev:id/text_landing_heading"}
+2023-06-04 22:37:29:098 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["id","com.sandboxx.android.dev:id/text_landing_heading","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:098 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:29:098 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:29:098 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:29:098 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"id","selector":"com.sandboxx.android.dev:id/text_landing_heading","context":"","multiple":false}
+2023-06-04 22:37:29:106 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000020","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000020"}}
+2023-06-04 22:37:29:106 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000020","ELEMENT":"00000000-0000-002f-ffff-ffff00000020"}
+2023-06-04 22:37:29:106 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 9 ms - 137
+2023-06-04 22:37:29:107 [HTTP] 
+2023-06-04 22:37:29:108 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000020/text
+2023-06-04 22:37:29:108 [HTTP] {}
+2023-06-04 22:37:29:109 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Driver proxy active, passing request on via HTTP proxy
+2023-06-04 22:37:29:109 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000020/text' to command name 'getText'
+2023-06-04 22:37:29:109 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000020/text] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff00000020/text] with no body
+2023-06-04 22:37:29:113 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":"Show Your Love"}
+2023-06-04 22:37:29:113 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Replacing sessionId f580511f-2325-4232-a299-4ed4a2c9772e with 8d07b0c9-83dd-4497-ad48-8f36a80208d3
+2023-06-04 22:37:29:114 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000020/text 200 5 ms - 77
+2023-06-04 22:37:29:114 [HTTP] 
+2023-06-04 22:37:29:115 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:29:115 [HTTP] {"using":"id","value":"com.sandboxx.android.dev:id/tv_landing_text"}
+2023-06-04 22:37:29:116 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["id","com.sandboxx.android.dev:id/tv_landing_text","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:116 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:29:116 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:29:116 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:29:116 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"id","selector":"com.sandboxx.android.dev:id/tv_landing_text","context":"","multiple":false}
+2023-06-04 22:37:29:120 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000021","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000021"}}
+2023-06-04 22:37:29:121 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000021","ELEMENT":"00000000-0000-002f-ffff-ffff00000021"}
+2023-06-04 22:37:29:121 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 5 ms - 137
+2023-06-04 22:37:29:121 [HTTP] 
+2023-06-04 22:37:29:123 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000021/text
+2023-06-04 22:37:29:123 [HTTP] {}
+2023-06-04 22:37:29:123 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Driver proxy active, passing request on via HTTP proxy
+2023-06-04 22:37:29:123 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000021/text' to command name 'getText'
+2023-06-04 22:37:29:123 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000021/text] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff00000021/text] with no body
+2023-06-04 22:37:29:127 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":"Attach a photo with each letter"}
+2023-06-04 22:37:29:127 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Replacing sessionId f580511f-2325-4232-a299-4ed4a2c9772e with 8d07b0c9-83dd-4497-ad48-8f36a80208d3
+2023-06-04 22:37:29:127 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000021/text 200 4 ms - 94
+2023-06-04 22:37:29:127 [HTTP] 
+2023-06-04 22:37:29:129 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:29:129 [HTTP] {"using":"xpath","value":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]"}
+2023-06-04 22:37:29:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:29:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:29:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:29:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"xpath","selector":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]","context":"","multiple":false}
+2023-06-04 22:37:29:149 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff0000000b","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000b"}}
+2023-06-04 22:37:29:149 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000b","ELEMENT":"00000000-0000-002f-ffff-ffff0000000b"}
+2023-06-04 22:37:29:149 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 20 ms - 137
+2023-06-04 22:37:29:149 [HTTP] 
+2023-06-04 22:37:29:152 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:29:152 [HTTP] {"using":"xpath","value":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[2]"}
+2023-06-04 22:37:29:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[2]","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:29:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:29:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:29:152 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"xpath","selector":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[2]","context":"","multiple":false}
+2023-06-04 22:37:29:167 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff0000000e","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000e"}}
+2023-06-04 22:37:29:167 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000e","ELEMENT":"00000000-0000-002f-ffff-ffff0000000e"}
+2023-06-04 22:37:29:168 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 16 ms - 137
+2023-06-04 22:37:29:168 [HTTP] 
+2023-06-04 22:37:29:170 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000000e/click
+2023-06-04 22:37:29:170 [HTTP] {"id":"00000000-0000-002f-ffff-ffff0000000e"}
+2023-06-04 22:37:29:170 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.click() with args: ["00000000-0000-002f-ffff-ffff0000000e","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:29:171 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element/00000000-0000-002f-ffff-ffff0000000e/click' to command name 'click'
+2023-06-04 22:37:29:171 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element/00000000-0000-002f-ffff-ffff0000000e/click] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff0000000e/click] with body: {"element":"00000000-0000-002f-ffff-ffff0000000e"}
+2023-06-04 22:37:29:211 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:29:211 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.click() result: null
+2023-06-04 22:37:29:211 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000000e/click 200 41 ms - 14
+2023-06-04 22:37:29:211 [HTTP] 
+2023-06-04 22:37:30:222 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:30:222 [HTTP] {"using":"xpath","value":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[3]"}
+2023-06-04 22:37:30:222 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[3]","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:30:222 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:30:223 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:30:223 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:30:223 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"xpath","selector":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[3]","context":"","multiple":false}
+2023-06-04 22:37:30:340 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000011","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000011"}}
+2023-06-04 22:37:30:341 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000011","ELEMENT":"00000000-0000-002f-ffff-ffff00000011"}
+2023-06-04 22:37:30:342 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 120 ms - 137
+2023-06-04 22:37:30:342 [HTTP] 
+2023-06-04 22:37:30:347 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000011/click
+2023-06-04 22:37:30:347 [HTTP] {"id":"00000000-0000-002f-ffff-ffff00000011"}
+2023-06-04 22:37:30:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.click() with args: ["00000000-0000-002f-ffff-ffff00000011","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:30:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element/00000000-0000-002f-ffff-ffff00000011/click' to command name 'click'
+2023-06-04 22:37:30:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element/00000000-0000-002f-ffff-ffff00000011/click] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff00000011/click] with body: {"element":"00000000-0000-002f-ffff-ffff00000011"}
+2023-06-04 22:37:30:377 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:30:385 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.click() result: null
+2023-06-04 22:37:30:386 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff00000011/click 200 38 ms - 14
+2023-06-04 22:37:30:386 [HTTP] 
+2023-06-04 22:37:31:394 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:31:394 [HTTP] {"using":"xpath","value":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]"}
+2023-06-04 22:37:31:394 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:31:394 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:31:394 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:31:394 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:31:394 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"xpath","selector":"//android.widget.HorizontalScrollView[@resource-id='com.sandboxx.android.dev:id/tabs']/android.widget.LinearLayout/android.widget.LinearLayout[1]","context":"","multiple":false}
+2023-06-04 22:37:31:482 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff0000000b","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000b"}}
+2023-06-04 22:37:31:483 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff0000000b","ELEMENT":"00000000-0000-002f-ffff-ffff0000000b"}
+2023-06-04 22:37:31:483 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 90 ms - 137
+2023-06-04 22:37:31:484 [HTTP] 
+2023-06-04 22:37:31:488 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000000b/click
+2023-06-04 22:37:31:488 [HTTP] {"id":"00000000-0000-002f-ffff-ffff0000000b"}
+2023-06-04 22:37:31:488 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.click() with args: ["00000000-0000-002f-ffff-ffff0000000b","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:31:489 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element/00000000-0000-002f-ffff-ffff0000000b/click' to command name 'click'
+2023-06-04 22:37:31:489 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element/00000000-0000-002f-ffff-ffff0000000b/click] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element/00000000-0000-002f-ffff-ffff0000000b/click] with body: {"element":"00000000-0000-002f-ffff-ffff0000000b"}
+2023-06-04 22:37:31:642 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:31:643 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.click() result: null
+2023-06-04 22:37:31:643 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element/00000000-0000-002f-ffff-ffff0000000b/click 200 155 ms - 14
+2023-06-04 22:37:31:644 [HTTP] 
+2023-06-04 22:37:31:650 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:31:650 [HTTP] {"using":"id","value":"com.sandboxx.android.dev:id/btn_sign_up"}
+2023-06-04 22:37:31:651 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["id","com.sandboxx.android.dev:id/btn_sign_up","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:31:651 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:31:651 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:31:651 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:31:652 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"id","selector":"com.sandboxx.android.dev:id/btn_sign_up","context":"","multiple":false}
+2023-06-04 22:37:32:566 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000017","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000017"}}
+2023-06-04 22:37:32:567 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000017","ELEMENT":"00000000-0000-002f-ffff-ffff00000017"}
+2023-06-04 22:37:32:568 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 918 ms - 137
+2023-06-04 22:37:32:568 [HTTP] 
+2023-06-04 22:37:32:572 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element
+2023-06-04 22:37:32:572 [HTTP] {"using":"id","value":"com.sandboxx.android.dev:id/btn_log_in"}
+2023-06-04 22:37:32:573 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.findElement() with args: ["id","com.sandboxx.android.dev:id/btn_log_in","8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:32:573 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2023-06-04 22:37:32:573 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Waiting up to 0 ms for condition
+2023-06-04 22:37:32:573 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/element' to command name 'findElement'
+2023-06-04 22:37:32:573 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/element] with body: {"strategy":"id","selector":"com.sandboxx.android.dev:id/btn_log_in","context":"","multiple":false}
+2023-06-04 22:37:32:589 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"ELEMENT":"00000000-0000-002f-ffff-ffff00000019","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000019"}}
+2023-06-04 22:37:32:589 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-002f-ffff-ffff00000019","ELEMENT":"00000000-0000-002f-ffff-ffff00000019"}
+2023-06-04 22:37:32:590 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/element 200 17 ms - 137
+2023-06-04 22:37:32:590 [HTTP] 
+2023-06-04 22:37:32:594 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync
+2023-06-04 22:37:32:594 [HTTP] {"script":"mobile: queryAppState","args":[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}]}
+2023-06-04 22:37:32:596 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.execute() with args: ["mobile: queryAppState",[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:32:596 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Executing native command 'mobile: queryAppState'
+2023-06-04 22:37:32:597 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Querying the state of 'com.sandboxx.android.dev'
+2023-06-04 22:37:32:597 [ADB] Getting install status for com.sandboxx.android.dev
+2023-06-04 22:37:32:597 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:32:651 [ADB] 'com.sandboxx.android.dev' is installed
+2023-06-04 22:37:32:651 [ADB] Getting IDs of all 'com.sandboxx.android.dev' processes
+2023-06-04 22:37:32:651 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pgrep -f \(\[\[:blank:\]\]\|\^\)com\.sandboxx\.android\.dev\(\[\[:blank:\]\]\|\$\)'
+2023-06-04 22:37:32:769 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
+2023-06-04 22:37:32:794 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.execute() result: 4
+2023-06-04 22:37:32:795 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync 200 201 ms - 11
+2023-06-04 22:37:32:795 [HTTP] 
+2023-06-04 22:37:32:799 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync
+2023-06-04 22:37:32:799 [HTTP] {"script":"mobile: backgroundApp","args":[{"appId":"/Users/Roman_Nejouta/AppFiles/Android/app-2.apk"}]}
+2023-06-04 22:37:32:802 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.execute() with args: ["mobile: backgroundApp",[{"appId":"/Users/Roman_Nejouta/AppFiles/Android/app-2.apk"}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:32:802 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Executing native command 'mobile: backgroundApp'
+2023-06-04 22:37:32:802 [ADB] Pressing the HOME button
+2023-06-04 22:37:32:802 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell input keyevent 3'
+2023-06-04 22:37:32:830 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.execute() result: true
+2023-06-04 22:37:32:831 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync 200 32 ms - 14
+2023-06-04 22:37:32:831 [HTTP] 
+2023-06-04 22:37:35:865 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync
+2023-06-04 22:37:35:865 [HTTP] {"script":"mobile: queryAppState","args":[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}]}
+2023-06-04 22:37:35:866 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.execute() with args: ["mobile: queryAppState",[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:35:866 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Executing native command 'mobile: queryAppState'
+2023-06-04 22:37:35:867 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Querying the state of 'com.sandboxx.android.dev'
+2023-06-04 22:37:35:867 [ADB] Getting install status for com.sandboxx.android.dev
+2023-06-04 22:37:35:867 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.sandboxx.android.dev'
+2023-06-04 22:37:35:910 [ADB] 'com.sandboxx.android.dev' is installed
+2023-06-04 22:37:35:910 [ADB] Getting IDs of all 'com.sandboxx.android.dev' processes
+2023-06-04 22:37:35:910 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pgrep -f \(\[\[:blank:\]\]\|\^\)com\.sandboxx\.android\.dev\(\[\[:blank:\]\]\|\$\)'
+2023-06-04 22:37:35:949 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
+2023-06-04 22:37:35:981 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.execute() result: 3
+2023-06-04 22:37:35:982 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync 200 117 ms - 11
+2023-06-04 22:37:35:982 [HTTP] 
+2023-06-04 22:37:35:988 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync
+2023-06-04 22:37:35:988 [HTTP] {"script":"mobile: activateApp","args":[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}]}
+2023-06-04 22:37:35:988 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.execute() with args: ["mobile: activateApp",[{"bundleId":"com.sandboxx.android.dev","appId":"com.sandboxx.android.dev"}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:35:988 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Executing native command 'mobile: activateApp'
+2023-06-04 22:37:35:989 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Activating 'com.sandboxx.android.dev'
+2023-06-04 22:37:35:989 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package resolve-activity --brief com.sandboxx.android.dev'
+2023-06-04 22:37:36:017 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start-activity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.sandboxx.android.dev/com.sandboxx.android.features.startup.SplashActivity'
+2023-06-04 22:37:36:066 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sandboxx.android.dev/com.sandboxx.android.features.startup.SplashActivity }
+2023-06-04 22:37:36:066 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.execute() result: null
+2023-06-04 22:37:36:067 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/execute/sync 200 79 ms - 14
+2023-06-04 22:37:36:067 [HTTP] 
+2023-06-04 22:37:38:082 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:38:082 [HTTP] {}
+2023-06-04 22:37:38:083 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:38:086 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:38:086 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:38:110 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:38:110 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:38:111 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 29 ms - 50
+2023-06-04 22:37:38:111 [HTTP] 
+2023-06-04 22:37:38:127 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:38:128 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:38:128 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:38:129 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:38:130 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:38:132 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:38:132 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:38:712 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:38:712 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:38:713 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 585 ms - 14
+2023-06-04 22:37:38:713 [HTTP] 
+2023-06-04 22:37:39:722 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:39:723 [HTTP] {}
+2023-06-04 22:37:39:725 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:39:726 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:39:726 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:39:734 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:39:735 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:39:736 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 14 ms - 50
+2023-06-04 22:37:39:736 [HTTP] 
+2023-06-04 22:37:39:744 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:39:745 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:39:745 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:39:745 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:39:746 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:39:747 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:39:748 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:39:749 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:39:749 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:39:750 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:39:751 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:39:752 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:39:752 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:40:311 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:40:312 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:40:313 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 568 ms - 14
+2023-06-04 22:37:40:314 [HTTP] 
+2023-06-04 22:37:41:324 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:41:324 [HTTP] {}
+2023-06-04 22:37:41:325 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:41:326 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:41:326 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:41:333 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:41:335 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:41:336 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 12 ms - 50
+2023-06-04 22:37:41:336 [HTTP] 
+2023-06-04 22:37:41:345 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:41:345 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:41:345 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:346 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:41:347 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:41:348 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:41:349 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:41:350 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:41:351 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:41:351 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:41:892 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:41:893 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:41:895 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 549 ms - 14
+2023-06-04 22:37:41:895 [HTTP] 
+2023-06-04 22:37:42:909 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:42:909 [HTTP] {}
+2023-06-04 22:37:42:911 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:42:912 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:42:912 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:42:920 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:42:921 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:42:921 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 12 ms - 50
+2023-06-04 22:37:42:922 [HTTP] 
+2023-06-04 22:37:42:930 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:42:930 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:42:930 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:42:931 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:42:932 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:42:933 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 135,
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:42:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 500,
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 945,
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 1100,
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:42:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:42:936 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:42:937 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:42:937 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":135,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":500,"x":945,"y":1100,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:43:492 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:43:493 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:43:494 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 564 ms - 14
+2023-06-04 22:37:43:494 [HTTP] 
+2023-06-04 22:37:46:509 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:46:509 [HTTP] {}
+2023-06-04 22:37:46:511 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:46:512 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:46:512 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:46:520 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:46:521 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:46:522 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 13 ms - 50
+2023-06-04 22:37:46:522 [HTTP] 
+2023-06-04 22:37:46:531 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:46:531 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:46:531 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:46:532 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:46:533 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:46:534 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:46:535 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:46:536 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:46:537 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:46:538 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:46:968 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:46:969 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:46:970 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 439 ms - 14
+2023-06-04 22:37:46:971 [HTTP] 
+2023-06-04 22:37:48:985 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:48:985 [HTTP] {}
+2023-06-04 22:37:48:986 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:48:987 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:48:987 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:48:995 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:48:996 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:48:997 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 13 ms - 50
+2023-06-04 22:37:48:997 [HTTP] 
+2023-06-04 22:37:49:008 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:49:008 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:49:008 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:009 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:49:011 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:49:011 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:49:011 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:49:012 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:49:013 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:49:014 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:49:015 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:49:015 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:49:015 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:49:015 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:49:444 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:49:444 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:49:445 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 438 ms - 14
+2023-06-04 22:37:49:445 [HTTP] 
+2023-06-04 22:37:51:457 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:51:457 [HTTP] {}
+2023-06-04 22:37:51:458 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:51:459 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:51:459 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:51:467 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:51:468 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:51:469 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 12 ms - 50
+2023-06-04 22:37:51:469 [HTTP] 
+2023-06-04 22:37:51:476 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:51:476 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:51:477 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:51:478 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:51:479 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:51:480 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:51:480 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:51:480 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:51:480 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:51:481 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:51:481 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:51:912 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:51:912 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:51:912 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 437 ms - 14
+2023-06-04 22:37:51:913 [HTTP] 
+2023-06-04 22:37:53:924 [HTTP] --> GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect
+2023-06-04 22:37:53:924 [HTTP] {}
+2023-06-04 22:37:53:925 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.getWindowRect() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:53:926 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/window/current/size' to command name 'getWindowSize'
+2023-06-04 22:37:53:926 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/window/current/size] with no body
+2023-06-04 22:37:53:934 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":{"height":2201,"width":1080}}
+2023-06-04 22:37:53:935 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.getWindowRect() result: {"width":1080,"height":2201,"x":0,"y":0}
+2023-06-04 22:37:53:936 [HTTP] <-- GET /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/window/rect 200 11 ms - 50
+2023-06-04 22:37:53:936 [HTTP] 
+2023-06-04 22:37:53:944 [HTTP] --> POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions
+2023-06-04 22:37:53:944 [HTTP] {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:53:944 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.performActions() with args: [[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}],"8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Received the following W3C actions: [
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:945 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:53:946 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:53:946 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:53:947 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Preprocessed actions: [
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   {
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "id": "finger1",
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "type": "pointer",
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "parameters": {
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       "pointerType": "touch"
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     },
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     "actions": [
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 0,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 216,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerDown"
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "duration": 400,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "x": 864,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "y": 660,
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerMove",
+2023-06-04 22:37:53:948 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "origin": "viewport"
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       },
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       {
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "button": 0,
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]         "type": "pointerUp"
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]       }
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]     ]
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)]   }
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] ]
+2023-06-04 22:37:53:949 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/actions' to command name 'performActions'
+2023-06-04 22:37:53:950 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [POST /actions] to [POST http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e/actions] with body: {"actions":[{"id":"finger1","type":"pointer","parameters":{"pointerType":"touch"},"actions":[{"duration":0,"x":216,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerDown"},{"duration":400,"x":864,"y":660,"type":"pointerMove","origin":"viewport"},{"button":0,"type":"pointerUp"}]}]}
+2023-06-04 22:37:54:380 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:54:380 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Responding to client with driver.performActions() result: null
+2023-06-04 22:37:54:382 [HTTP] <-- POST /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3/actions 200 438 ms - 14
+2023-06-04 22:37:54:382 [HTTP] 
+2023-06-04 22:37:56:396 [HTTP] --> DELETE /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3
+2023-06-04 22:37:56:396 [HTTP] {}
+2023-06-04 22:37:56:398 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Calling AppiumDriver.deleteSession() with args: ["8d07b0c9-83dd-4497-ad48-8f36a80208d3"]
+2023-06-04 22:37:56:399 [AppiumDriver@6729] Event 'quitSessionRequested' logged at 1685936276398 (22:37:56 GMT-0500 (Central Daylight Time))
+2023-06-04 22:37:56:399 [AppiumDriver@6729] Removing session 8d07b0c9-83dd-4497-ad48-8f36a80208d3 from our master session list
+2023-06-04 22:37:56:400 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Deleting UiAutomator2 session
+2023-06-04 22:37:56:401 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Deleting UiAutomator2 server session
+2023-06-04 22:37:56:401 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Matched '/' to command name 'deleteSession'
+2023-06-04 22:37:56:401 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Proxying [DELETE /] to [DELETE http://127.0.0.1:8200/session/f580511f-2325-4232-a299-4ed4a2c9772e] with no body
+2023-06-04 22:37:56:415 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Got response with status 200: {"sessionId":"f580511f-2325-4232-a299-4ed4a2c9772e","value":null}
+2023-06-04 22:37:56:416 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
+2023-06-04 22:37:56:418 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.sandboxx.android.dev'
+2023-06-04 22:37:56:509 [Logcat] Stopping logcat capture
+2023-06-04 22:37:56:512 [ADB] Removing forwarded port socket connection: 8200 
+2023-06-04 22:37:56:513 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8200'
+2023-06-04 22:37:56:529 [AndroidUiautomator2Driver@eef6 (8d07b0c9)] Restoring hidden api policy to the device default configuration
+2023-06-04 22:37:56:529 [ADB] Running '/Users/Roman_Nejouta/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
+2023-06-04 22:37:56:567 [AppiumDriver@6729] Event 'quitSessionFinished' logged at 1685936276567 (22:37:56 GMT-0500 (Central Daylight Time))
+2023-06-04 22:37:56:567 [AppiumDriver@6729] Received response: null
+2023-06-04 22:37:56:567 [AppiumDriver@6729] But deleting session, so not returning
+2023-06-04 22:37:56:567 [AppiumDriver@6729] Responding to client with driver.deleteSession() result: null
+2023-06-04 22:37:56:568 [HTTP] <-- DELETE /session/8d07b0c9-83dd-4497-ad48-8f36a80208d3 200 172 ms - 14
+2023-06-04 22:37:56:568 [HTTP] 
+2023-06-04 22:37:56:579 [Appium] Received SIGTERM - shutting down
+2023-06-04 22:37:56:579 [AppiumDriver@6729] There are no active sessions for cleanup
+2023-06-04 22:37:56:582 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:930:11)
+    at Socket._write (node:net:942:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.<computed> [as info] (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
+    at EventEmitter.<anonymous> (/usr/local/lib/node_modules/appium/lib/logsink.js:230:24)
+    at EventEmitter.emit (node:events:513:28)
+    at EventEmitter.<anonymous> (/usr/local/lib/node_modules/appium/node_modules/npmlog/lib/log.js:247:8)
+2023-06-04 22:37:56:583 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:930:11)
+    at Socket._write (node:net:942:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:513:28)
+    at processEmit (/usr/local/lib/node_modules/appium/node_modules/signal-exit/index.js:199:34)
+2023-06-04 22:37:56:583 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:930:11)
+    at Socket._write (node:net:942:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:513:28)
+    at processEmit (/usr/local/lib/node_modules/appium/node_modules/signal-exit/index.js:199:34)
+2023-06-04 22:37:56:584 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:930:11)
+    at Socket._write (node:net:942:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:513:28)
+    at processEmit (/usr/local/lib/node_modules/appium/node_modules/signal-exit/index.js:199:34)
+2023-06-04 22:37:56:585 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:930:11)
+    at Socket._write (node:net:942:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:513:28)
+    at processEmit (/usr/local/lib/node_modules/appium/node_modules/signal-exit/index.js:199:34)
