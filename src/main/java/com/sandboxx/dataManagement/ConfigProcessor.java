@@ -43,4 +43,7 @@ public class ConfigProcessor {
     public static String getAppPackage(){
         return properties.getProperty("appPackage");
     }
+    public static String getAndroidApp(){return properties.getProperty("androidApp");}
+    public static String getIosApp(){return properties.getProperty("iosApp");}
+
 }

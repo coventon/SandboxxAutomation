@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Sandboxx Regression" verbose="1" >
+
+    <listeners>
+        <listener class-name="com.sandboxx.framework.utils.AnnotationTransformer"></listener>
+    </listeners>
+    <test name="iOS">
+        <parameter name="platform" value="ios"></parameter>
+        <classes>
+<!--            <class name="org.example.IOS.DemoTest1"/>-->
+            <!--            <class name="test.sample.ParameterTest"/>-->
+        </classes>
+    </test>
+    <test name="Android">
+        <parameter name="platform" value="android"></parameter>
+        <classes>
+            <class name="com.sandboxx.Android.AndroidTest1"/>
+            <!--            <class name="test.sample.ParameterTest"/>-->
+        </classes>
+    </test>
+</suite>
