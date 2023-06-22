@@ -19,7 +19,9 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AppiumServer {
@@ -59,13 +61,17 @@ public class AppiumServer {
         return  server;
     }
 
-    public static void start(){
-        if (!isServerRunning(appiumServerPort)) {
+    public static void start() throws InterruptedException {
+        if(isServerRunning(appiumServerPort)){
+
+            killProcessOnPort(appiumServerPort);
+            Thread.sleep(2000);
+        }
 
             getInstance().start();
             System.out.println(">>> Appium Server is running on url : port : "+server.getUrl());
             System.out.println(">>> Appium state is Running: "+ server.isRunning());
-        }
+
 
     }
 
@@ -95,7 +101,7 @@ public class AppiumServer {
         }
     }
 
-    public static void killProcessOnPort(int port){
+    public static void killProcessOnPort2(int port){
         try{
             Process process = Runtime.getRuntime().exec("lsof -n -i4TCP:" + port + " | grep LISTEN | awk '{print $2}'");
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -105,11 +111,56 @@ public class AppiumServer {
                 Runtime.getRuntime().exec("kill -9" + pid); // kills process on port
                 Runtime.getRuntime().exec("/usr/bin/killall -9 node"); // Kills all node processes.
                 System.out.println("Process running on port " + port + " with PID" + pid +  " has been killed.");
-                return;
+                //return;
             }
             System.out.println("No process found running on port " + port + ".");
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void killProcessOnPort(int port) {
+
+        List<Integer> pids = getProcessIds(port);
+        if(!pids.isEmpty()){
+            for(int pid:pids){
+                System.out.println(">>>> Killing process: "+pid+" on port: "+port);
+                killProcess(pid);
+            }
+        }else{
+            System.out.println(">>> No processes found running on port " + port);
+        }
+    }
+
+    private static List<Integer> getProcessIds(int port){
+        List<Integer> pids = new ArrayList<>();
+        String line;
+        try{
+            Process process = Runtime.getRuntime().exec("lsof -i :"+port);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            while((line = reader.readLine()) != null){
+                String[] splitLine = line.trim().split("\\s+");
+                System.out.println(">>> split line: "+ splitLine.length);
+                if(splitLine.length > 1 && splitLine[1].matches("\\d+")){
+                    System.out.println(">>>> Split line added to list: "+splitLine[1]);
+                    pids.add(Integer.parseInt(splitLine[1]));
+                }
+            }
+
+            reader.close();
+            process.waitFor();
+        }catch (IOException | InterruptedException e){
+            e.printStackTrace();
+        }
+        return pids;
+    }
+    private static void killProcess(int pid){
+        try{
+            Process process = Runtime.getRuntime().exec("kill " +pid);
+            process.waitFor();
+        }catch (IOException | InterruptedException e){
+            e.printStackTrace();
         }
     }
 

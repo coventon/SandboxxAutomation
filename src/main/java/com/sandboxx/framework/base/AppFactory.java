@@ -5,10 +5,12 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class AppFactory {
@@ -35,6 +37,8 @@ public class AppFactory {
 
         System.out.println(">>> Initializing Android Driver");
         driver = new AndroidDriver(new URL(serverUrl),options);
+        //WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
         AppDriver.setDriver(driver);
 
         System.out.println("---> Driver Initialized");
@@ -55,6 +59,8 @@ public class AppFactory {
 
         System.out.println(">>> Initializing Android Driver");
         driver = new IOSDriver(new URL(serverUrl),options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
+
         AppDriver.setDriver(driver);
 
         System.out.println("---> Driver Initialized");

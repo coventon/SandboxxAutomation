@@ -8,17 +8,25 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public abstract class BasePage implements IPage {
-    protected AppiumDriver driver;
+    //protected AppiumDriver driver;
+    WebDriverWait wait;
 
     private static final By MainNavLocator = By.xpath("");
 
     public MainNavigation mainNavigation = new MainNavigation(AppDriver.getDriver().findElement(MainNavLocator));
 
+    //public BasePage(AppiumDriver driver){
+        //this.driver = driver;
+        //PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+    //}
+
     public BasePage(AppiumDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+        wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20));
     }
 
     @Override

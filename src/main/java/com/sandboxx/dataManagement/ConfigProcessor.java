@@ -34,7 +34,7 @@ public class ConfigProcessor {
     }
 
     public static int getTimeout() {
-        return Integer.parseInt(properties.getProperty("timeout"));
+        return Integer.parseInt(properties.getProperty("DRIVER_IMPLICIT_TIMEOUT"));
     }
 
     public static String getOS(){
