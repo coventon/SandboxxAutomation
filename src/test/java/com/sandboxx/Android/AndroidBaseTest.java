@@ -141,7 +141,7 @@ public class AndroidBaseTest {
 
     @AfterSuite
     public void suiteTearDown() {
-        System.out.println(">>> After Suite: Stop Appium Server");
+        System.out.println(">>>> After Suite: Stop Appium Server");
         Reporter.log("=====Appium Server Stopped=====", true);
     }
 

@@ -16,7 +16,7 @@ public class ScreenshotTest extends AndroidBaseTest{
 
             System.out.printf("Test name:  %s\n",testName);
             //Assert.fail("Intentionally Failed test...");
-        Assert.assertTrue(false, "--> Intentionally failed test");
+        Assert.assertTrue(false, "---> Intentionally failed test");
     }
 
     @Test
