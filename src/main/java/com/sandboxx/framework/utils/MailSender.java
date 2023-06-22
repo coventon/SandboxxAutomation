@@ -15,7 +15,7 @@ import java.util.Properties;
 
 public class MailSender {
 
-    public static void sendEmailWithReport() {
+    public static void sendEmailWithReport(TestResultData testResult) {
         // Gmail account credentials
         String senderEmail = " roman.nejouta@sandboxx.us";
         String senderPassword = "oltiowwayvhckufx";
@@ -27,7 +27,7 @@ public class MailSender {
         String subject = "Automation Test Report";
 
         // Create the email body with HTML and CSS layout
-        String emailBody = generateEmailBody();
+        String emailBody = generateEmailBody(testResult);
 
         // File path of the report to be attached
         String reportFilePath = System.getProperty("user.dir") +"/testOutput/TestReport.html";
@@ -84,7 +84,7 @@ public class MailSender {
         }
     }
 
-    private static String generateEmailBody() {
+    private static String generateEmailBody(TestResultData resultData) {
         // Get the current date and time
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -102,19 +102,19 @@ public class MailSender {
                 "<table>" +
                 "<tr><th colspan=\"2\">Summary</th></tr>" +
                 "<tr><td><b>Test Suite</b></td><td>Sandboxx Daily Regression</td></tr>" +
-                "<tr><td><b>Platform</b></td><td>Android</td></tr>" +
-                "<tr><td><b>Environment</b></td><td>Staging</td></tr>" +
-                "<tr><td><b>Start</b></td><td>[Start Date and Time]</td></tr>" +
-                "<tr><td><b>Finish</b></td><td>[Finish Date and Time]</td></tr>" +
-                "<tr><td><b>Duration</b></td><td>[Duration]</td></tr>" +
+                "<tr><td><b>Platform</b></td><td>"+resultData.getPlatform()+"</td></tr>" +
+                "<tr><td><b>Environment</b></td><td>"+resultData.getEnvironment()+"</td></tr>" +
+                "<tr><td><b>Start</b></td><td>"+resultData.getStartTime()+"</td></tr>" +
+                "<tr><td><b>Finish</b></td><td>"+resultData.getFinishTime()+"</td></tr>" +
+                "<tr><td><b>Duration</b></td><td>"+resultData.getDuration()+"</td></tr>" +
                 "</table>" +
                 "<br>" +
                 "<table>" +
                 "<tr><th colspan=\"2\">Results</th></tr>" +
-                "<tr><td><b>Pass</b></td><td>1</td></tr>" +
-                "<tr><td><b>Fail</b></td><td>2</td></tr>" +
-                "<tr><td><b>Total</b></td><td>3</td></tr>" +
-                "<tr><td><b>Pass Rate</b></td><td>%</td></tr>" +
+                "<tr><td><b>Pass</b></td><td>"+resultData.getTestsPasses()+"</td></tr>" +
+                "<tr><td><b>Fail</b></td><td>"+resultData.getTestsFailed()+"</td></tr>" +
+                "<tr><td><b>Total</b></td><td>"+resultData.getTotal()+"</td></tr>" +
+                "<tr><td><b>Pass Rate</b></td><td>"+resultData.getPassRate()+"</td></tr>" +
                 "</table>" +
                 "</body></html>";
 

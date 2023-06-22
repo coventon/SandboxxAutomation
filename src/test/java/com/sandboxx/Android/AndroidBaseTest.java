@@ -136,7 +136,7 @@ public class AndroidBaseTest {
 
         TestResultData testData =  getTestResults();
         System.out.println(testData.toString());
-        MailSender.sendEmailWithReport();
+        MailSender.sendEmailWithReport(testData);
     }
 
     @AfterSuite
