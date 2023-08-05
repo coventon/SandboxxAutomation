@@ -10,7 +10,7 @@ public class TestDataModel {
     public String lastName;
     public String userData;
 
-    public TestDataModel(String testID, String username, String password, String email, String phone, String firstName, String lastName, String userData) {
+    public TestDataModel(String testID, String username, String password, String email, String firstName, String lastName,String phone, String userData) {
         this.testID = testID;
         this.username = username;
         this.password = password;

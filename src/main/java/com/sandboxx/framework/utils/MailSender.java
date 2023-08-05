@@ -111,7 +111,7 @@ public class MailSender {
                 "<br>" +
                 "<table>" +
                 "<tr><th colspan=\"2\">Results</th></tr>" +
-                "<tr><td><b>Pass</b></td><td>"+resultData.getTestsPasses()+"</td></tr>" +
+                "<tr><td><b>Pass</b></td><td>"+resultData.getTestsPassed()+"</td></tr>" +
                 "<tr><td><b>Fail</b></td><td>"+resultData.getTestsFailed()+"</td></tr>" +
                 "<tr><td><b>Total</b></td><td>"+resultData.getTotal()+"</td></tr>" +
                 "<tr><td><b>Pass Rate</b></td><td>"+resultData.getPassRate()+"</td></tr>" +

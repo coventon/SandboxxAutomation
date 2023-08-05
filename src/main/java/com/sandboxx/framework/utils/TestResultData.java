@@ -2,7 +2,7 @@ package com.sandboxx.framework.utils;
 
 public class TestResultData {
 
-    private String testsPasses;
+    private String testsPassed;
     private String testsFailed;
     private String passRate;
     private String total;
@@ -15,7 +15,7 @@ public class TestResultData {
     @Override
     public String toString() {
         return "TestResultData{" +
-                "testsPasses='" + testsPasses + '\'' +
+                "testsPasses='" + testsPassed + '\'' +
                 ", testsFailed='" + testsFailed + '\'' +
                 ", passRate='" + passRate + '\'' +
                 ", total='" + total + '\'' +
@@ -27,8 +27,8 @@ public class TestResultData {
                 '}';
     }
 
-    public void setTestsPasses(String testsPasses) {
-        this.testsPasses = testsPasses;
+    public void setTestsPassed(String testsPasses) {
+        this.testsPassed = testsPasses;
     }
 
     public void setTestsFailed(String testsFailed) {
@@ -65,8 +65,8 @@ public class TestResultData {
 
 
 
-    public String getTestsPasses() {
-        return testsPasses;
+    public String getTestsPassed() {
+        return testsPassed;
     }
 
     public String getTestsFailed() {

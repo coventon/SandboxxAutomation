@@ -7,7 +7,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.function.Consumer;
@@ -209,6 +211,19 @@ public class PageActionsHelper {
         swipe.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
         ((RemoteWebDriver)AppDriver.getDriver()).perform(ImmutableList.of(swipe));
+    }
+
+    public static void click(By byEl){
+        new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(byEl)).click();
+    }
+
+    public static void sendKeys(By byEl, String text){
+        waitForEl(byEl);
+        AppDriver.getDriver().findElement(byEl).sendKeys(text);
+    }
+
+    public static void waitForEl(By byEl){
+        new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(byEl));
     }
 
 

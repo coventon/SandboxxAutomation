@@ -46,4 +46,15 @@ public class ConfigProcessor {
     public static String getAndroidApp(){return properties.getProperty("androidApp");}
     public static String getIosApp(){return properties.getProperty("iosApp");}
 
+    /// # Devices
+    /// #IOS
+    public static String getIOSDeviceType(){return properties.getProperty("iOSDeviceType");}
+    public static String getIosSimulatorName(){return properties.getProperty("iOSSimulatorName");}
+    public static String getIosPlatformVersion(){return properties.getProperty("iOSPlatformVersion");}
+    /// #Android
+    public static String getAndroidDevice(){return properties.getProperty("androidDevice");}
+    public static String getEmulatorName(){return properties.getProperty("emulatorName");}
+    public static String getAndroidRealDeviceName(){return properties.getProperty("AndroidRealDeviceName");}
+    public static String getAndroidRealDevicePlatformVersion(){return properties.getProperty("AndroidRealDevicePlatformVersion");}
+
 }

@@ -16,16 +16,18 @@ public abstract class BasePage implements IPage {
     //protected AppiumDriver driver;
     WebDriverWait wait;
 
-    private static final By MainNavLocator = By.xpath("");
+    private static final By MainNavLocator = By.id("com.sandboxx.android.dev:id/bottom_navigation");
 
-    public MainNavigation mainNavigation = new MainNavigation(AppDriver.getDriver().findElement(MainNavLocator));
+    public MainNavigation mainNavigation;
 
     //public BasePage(AppiumDriver driver){
         //this.driver = driver;
         //PageFactory.initElements(new AppiumFieldDecorator(driver),this);
     //}
 
-    public BasePage(AppiumDriver driver){
+    public BasePage(){
+        PageFactory.initElements(new AppiumFieldDecorator(AppDriver.getDriver()), this);
+
         wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20));
     }
 
@@ -48,7 +50,7 @@ public abstract class BasePage implements IPage {
                 System.out.println("Clicking Profile on Main Menu");
                 mainNavigation.profileButton.click();
             break;
-            case Sandboxx_Squad:
+            case Sandboxx_Squads:
                 System.out.println("Clicking Squad on Main Menu");
                 mainNavigation.squadButton.click();
                 break;
@@ -68,4 +70,10 @@ public abstract class BasePage implements IPage {
             default: throw new IllegalArgumentException(String.format("There is no implementation for %s",goTo));
         }
     }
+
+    public void createMainNavigation(){
+       // mainNavigation = new MainNavigation(AppDriver.getDriver().findElement(MainNavLocator));
+        mainNavigation = new MainNavigation();
+    }
+
 }

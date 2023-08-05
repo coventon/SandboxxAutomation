@@ -10,13 +10,15 @@
         <classes>
 <!--            <class name="org.example.IOS.DemoTest1"/>-->
             <!--            <class name="test.sample.ParameterTest"/>-->
+            <class name="com.sandboxx.singleTestSetUp.CloudGrayIosSampleTest"/>
         </classes>
     </test>
     <test name="Android">
         <parameter name="platform" value="android"></parameter>
         <classes>
-            <class name="com.sandboxx.Android.AndroidTest1"/>
+<!--            <class name="com.sandboxx.Android.AndroidTest1"/>-->
             <!--            <class name="test.sample.ParameterTest"/>-->
+            <class name="com.sandboxx.singleTestSetUp.CloudGraySampleTest"/>
         </classes>
     </test>
 </suite>
