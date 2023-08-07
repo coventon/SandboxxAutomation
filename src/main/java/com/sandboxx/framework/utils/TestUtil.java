@@ -1,6 +1,11 @@
 package com.sandboxx.framework.utils;
 
+import com.sandboxx.dataManagement.testData.userModels.ActiveDuty;
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.pages.LandingPage;
+import com.sandboxx.pages.homeView.HomePage;
+import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
+import com.sandboxx.pages.registration.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -57,5 +62,50 @@ public class TestUtil {
         String base64Image = Base64.getEncoder().encodeToString(screenshotBytes);
         System.out.println("Screenshot Saved Successfully.");
         return base64Image;
+    }
+
+    public static void recruitSignupWithEmail(ActiveDuty user) throws InterruptedException {
+
+        LandingPage landingPage = new LandingPage();
+        SignUpPage signUpPage = landingPage.clickSignUpButton();
+
+        EmailSignUpPage emailSignUpPage = signUpPage.clickContinueWithEmail();
+        emailSignUpPage.fillEmailForm(user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword());
+        emailSignUpPage.showPasswordIcon.click();
+        emailSignUpPage.continueButton.click();
+
+        PhoneConfirmationPage phoneConfirmationPage = new PhoneConfirmationPage();
+        phoneConfirmationPage.submitPhoneConfirmation(user.getPhoneNumber());
+
+        VerificationCodePage verificationCodePage = new VerificationCodePage();
+        UseSandboxxPage useSandboxxPage =  verificationCodePage.submitVerificationCode("123456");
+
+        BranchSelectionPage branchSelectionPage =  useSandboxxPage.selectBasicTraining();
+
+        BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
+        SelectRecruitingStationPage recruitingStation =  branchServicePage.selectAirForce();
+
+        ShipDateSelectPage shipDateSelectPage = recruitingStation.selectSquadron(SelectRecruitingStationPage.RecruitingStation.RS339);
+
+        shipDateSelectPage.noButton.click();
+        Thread.sleep(2000);
+
+        InviteFriendsPage inviteFriendsPage = new InviteFriendsPage();
+        WelcomePage welcomePage = inviteFriendsPage.tapNoThanks();
+        Thread.sleep(2000);
+
+        HomePage homePage = welcomePage.enterSandboxx();
+    }
+
+    public static void recruitDeleteAccountByEmail(){
+
+    }
+
+    public static void loginWithEmail(){
+
+    }
+
+    public static void logout(){
+
     }
 }

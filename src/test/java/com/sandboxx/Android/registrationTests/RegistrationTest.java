@@ -1,9 +1,12 @@
 package com.sandboxx.Android.registrationTests;
 
+import com.beust.ah.A;
 import com.sandboxx.Android.AndroidBaseTest;
 import com.sandboxx.dataManagement.testData.ExcelDataReader;
+import com.sandboxx.dataManagement.testData.userModels.ActiveDuty;
 import com.sandboxx.dataManagement.testDataModels.TestDataModel;
 import com.sandboxx.framework.utils.ApiHelper;
+import com.sandboxx.framework.utils.TestUtil;
 import com.sandboxx.pages.loginPages.CodeVerificationPage;
 import com.sandboxx.pages.LandingPage;
 import com.sandboxx.pages.loginPages.LoginPage;
@@ -388,6 +391,13 @@ public class RegistrationTest extends AndroidBaseTest {
         LandingPage landingPageLoggedOut = new LandingPage();
         landingPageLoggedOut.isAt();
 
+    }
+
+    @Test
+    public void loginUtilTest() throws InterruptedException {
+
+        ActiveDuty recruit = new ActiveDuty("Jessie","Kim","jkim1234@mail.com","6105965484","Temp1234");
+        TestUtil.recruitSignupWithEmail(recruit);
     }
 
 

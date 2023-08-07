@@ -71,8 +71,6 @@ public class AppiumServer {
             getInstance().start();
             System.out.println(">>> Appium Server is running on url : port : "+server.getUrl());
             System.out.println(">>> Appium state is Running: "+ server.isRunning());
-
-
     }
 
     public static void stop(){
