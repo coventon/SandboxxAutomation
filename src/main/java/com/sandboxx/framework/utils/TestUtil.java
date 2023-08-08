@@ -3,12 +3,19 @@ package com.sandboxx.framework.utils;
 import com.sandboxx.dataManagement.testData.userModels.ActiveDuty;
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.LandingPage;
+import com.sandboxx.pages.MainNavigation;
 import com.sandboxx.pages.homeView.HomePage;
+import com.sandboxx.pages.profileView.ProfilePage;
 import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
+import com.sandboxx.pages.profileView.settings.SettingsPage;
+import com.sandboxx.pages.profileView.settings.deleteAccount.DeleteAccountPage;
+import com.sandboxx.pages.profileView.settings.deleteAccount.EmailVerificationPage;
+import com.sandboxx.pages.profileView.settings.deleteAccount.VerifyAccountPage;
 import com.sandboxx.pages.registration.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -97,8 +104,29 @@ public class TestUtil {
         HomePage homePage = welcomePage.enterSandboxx();
     }
 
-    public static void recruitDeleteAccountByEmail(){
+    public static void deleteAccountByEmail(String email, String password) throws InterruptedException {
 
+        System.out.println(">>> Begin Delete Account By Email Flow.");
+        MainNavigation mainNavigation = new MainNavigation();
+        mainNavigation.profileButton.click();
+
+        ProfilePage profilePage = new ProfilePage();
+        SettingsPage settings = profilePage.tapSettings();
+
+        VerifyAccountPage verifyAccountPage = settings.tapDeleteAccount();
+        EmailVerificationPage emailVerification = verifyAccountPage.continueWithEmail();
+        Thread.sleep(2000);
+
+        emailVerification.emailInput.sendKeys(email);
+        emailVerification.passwordInput.sendKeys(password);
+        emailVerification.continueButton.click();
+
+        DeleteAccountPage deleteAccountPage = new DeleteAccountPage();
+
+        deleteAccountPage.deleteAccountCheckBox.click();
+        deleteAccountPage.deleteAccountBtn.click();
+        //LandingPage landingPageLoggedOut = new LandingPage();
+        //landingPageLoggedOut.isAt();
     }
 
     public static void loginWithEmail(){

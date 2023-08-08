@@ -398,6 +398,8 @@ public class RegistrationTest extends AndroidBaseTest {
 
         ActiveDuty recruit = new ActiveDuty("Jessie","Kim","jkim1234@mail.com","6105965484","Temp1234");
         TestUtil.recruitSignupWithEmail(recruit);
+        Thread.sleep(2000);
+        TestUtil.deleteAccountByEmail(recruit.getEmail(),recruit.getPassword());
     }
 
 

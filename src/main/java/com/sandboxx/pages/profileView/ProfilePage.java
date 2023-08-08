@@ -1,7 +1,9 @@
 package com.sandboxx.pages.profileView;
 
+import com.sandboxx.dataManagement.constants.GoTo;
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.MainNavigation;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

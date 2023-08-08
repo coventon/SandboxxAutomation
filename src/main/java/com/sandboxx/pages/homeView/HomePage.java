@@ -57,4 +57,5 @@ public class HomePage extends BasePage {
     public void navigateToProfile(){
         navigateTo(GoTo.Sandboxx_Profile);
     }
+
 }

@@ -18,7 +18,9 @@
         <classes>
 <!--            <class name="com.sandboxx.Android.AndroidTest1"/>-->
             <!--            <class name="test.sample.ParameterTest"/>-->
-            <class name="com.sandboxx.singleTestSetUp.CloudGraySampleTest"/>
+<!--            <class name="com.sandboxx.singleTestSetUp.CloudGraySampleTest"/>-->
+            <class name="com.sandboxx.Android.loginTests.LoginTest"></class>
+            <class name="com.sandboxx.Android.registrationTests.RegistrationTest"></class>
         </classes>
     </test>
 </suite>
