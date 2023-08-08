@@ -79,6 +79,7 @@ public class UseSandboxxPage extends BasePage {
         militaryCareerHeader.click();
         return new BranchSelectionPage();
     }
+
     public BranchSelectionPage selectBasicTraining() {
         basicTrainingCard.click();
         return new BranchSelectionPage();
