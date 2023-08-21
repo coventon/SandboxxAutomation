@@ -2,6 +2,8 @@ package com.sandboxx.pages.registration;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.registration.onboarding.BranchSelectionPage;
+import com.sandboxx.pages.registration.onboarding.DescribeYouPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -74,6 +76,7 @@ public class UseSandboxxPage extends BasePage {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
+    public UseSandboxxPage(){waitForPage();}
 
     public BranchSelectionPage selectMilitaryCareer() {
         militaryCareerHeader.click();
@@ -83,5 +86,9 @@ public class UseSandboxxPage extends BasePage {
     public BranchSelectionPage selectBasicTraining() {
         basicTrainingCard.click();
         return new BranchSelectionPage();
+    }
+    public DescribeYouPage selectSendLetters() {
+        sendLettersCard.click();
+        return new DescribeYouPage();
     }
 }

@@ -1,10 +1,9 @@
-package com.sandboxx.pages.registration;
+package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

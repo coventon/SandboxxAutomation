@@ -1,4 +1,4 @@
-package com.sandboxx.pages.registration;
+package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
@@ -51,6 +51,7 @@ public class BranchSelectionPage extends BasePage {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
+    public BranchSelectionPage(){waitForPage();}
 
     public BranchServicePage tapActiveDuty(){
         activeDutyHeader.click();
@@ -63,6 +64,9 @@ public class BranchSelectionPage extends BasePage {
                 break;
             case"Reserve":
                 reserveHeader.click();
+                break;
+            case"Active Duty":
+                activeDutyCard.click();
                 break;
         }
     }

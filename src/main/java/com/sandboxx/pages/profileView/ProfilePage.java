@@ -1,9 +1,8 @@
 package com.sandboxx.pages.profileView;
 
-import com.sandboxx.dataManagement.constants.GoTo;
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
-import com.sandboxx.pages.MainNavigation;
+import com.sandboxx.pages.profileView.addressBook.AddressBookTab;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -92,6 +91,7 @@ public class ProfilePage extends BasePage {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
+    public ProfilePage(){waitForPage();}
 
     public AddressBookTab tapAddressBook(){
         addressBookTab.click();
@@ -102,4 +102,6 @@ public class ProfilePage extends BasePage {
         settingsButton.click();
         return new SettingsPage();
     }
+
+
 }

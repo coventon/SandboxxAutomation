@@ -43,6 +43,7 @@ public class AppiumServer {
                 .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
                 //.usingAnyFreePort()
                 .usingPort(4723)
+                .withArgument(()->"--allow-insecure","chromedriver_autodownload")
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
                 .withLogFile(new File("AppiumAutomationLog.txt"))
                 .withIPAddress("127.0.0.1");

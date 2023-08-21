@@ -27,11 +27,13 @@ public class AppFactory {
                 .setAutomationName("UiAutomator2")
                 .setPlatformName("Android")
                 .setPlatformVersion("13.0")
-                //.setApp("/Users/Roman_Nejouta/AppFiles/Android/16_2_0/app-2.apk")
+                //.setApp("/Users/Roman_Nejouta/AppFiles/Android/16_4_0/app-2.apk")
                 .setApp(androidAppPath)
                 .setAppPackage("com.sandboxx.android.dev")
                 .setAppActivity("com.sandboxx.android.features.startup.SplashActivity") // Logged in Activity: com.sandboxx.android.features.startup.LandingActivity
                 .setAutoGrantPermissions(true)
+                .setChromedriverExecutableDir(System.getProperty("user.dir"+"/drivers/chrome/chromedriver_mac64/chromedriver"))
+                .setChromedriverExecutable(System.getProperty("user.dir"+"/drivers/chrome/chromedriver_mac64/chromedriver"))
                 .setNewCommandTimeout(Duration.ofMillis(8000))
                 .setNoReset(false);
 

@@ -2,6 +2,7 @@ package com.sandboxx.pages.profileView.settings.deleteAccount;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.LandingPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -70,5 +71,9 @@ public class DeleteAccountPage extends BasePage {
         String isChecked = deleteAccountCheckBox.getAttribute("checked");
         System.out.println("Delete Account checked: "+ isChecked);
         return Boolean.parseBoolean(isChecked);
+    }
+    public LandingPage deleteAccount(){
+        deleteAccountBtn.click();
+        return new LandingPage();
     }
 }

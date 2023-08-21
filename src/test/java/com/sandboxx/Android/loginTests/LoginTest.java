@@ -4,6 +4,7 @@ import com.sandboxx.Android.AndroidBaseTest;
 import com.sandboxx.dataManagement.testData.ExcelDataReader;
 import com.sandboxx.dataManagement.testDataModels.TestDataModel;
 import com.sandboxx.framework.utils.PageActionsHelper;
+import com.sandboxx.framework.utils.TestUtil;
 import com.sandboxx.pages.loginPages.CodeVerificationPage;
 import com.sandboxx.pages.LandingPage;
 import com.sandboxx.pages.loginPages.EmailLoginPage;
@@ -16,36 +17,14 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends AndroidBaseTest {
 
+
     @Test(priority = 1,groups = "Login")
-    public void loginWithPhoneFail() throws InterruptedException {
-        System.out.printf("Begin Test:  %s\n",testName);
-        TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
-
-        LandingPage landingPage = new LandingPage();
-        LoginPage loginPage = landingPage.clickLoginButton();
-        Thread.sleep(4000);
-
-        Assert.assertFalse(loginPage.continueWithPhoneButton.isEnabled());
-        //CodeVerificationPage codeVerificationPage =  loginPage.signInWithPhone(testData.phone); // Login with phone deprecated
-        loginPage.signInWithPhone(testData.phone);
-        Assert.assertTrue(loginPage.signInWithPhoneAlert.isDisplayed());
-
-        //codeVerificationPage.submitVerificationCode("123456");
-
-        //HomePage homePage = new HomePage();
-        //Assert.assertEquals("Welcome to Sandboxx, "+testData.firstName,homePage.welcomeGreeting.getText());
-    }
-
-    @Test(priority = 2,groups = "Login")
     public void logOutSuccess() throws InterruptedException {
         System.out.printf("Begin test: %s",testName);
         TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
 
-        LandingPage landingPage = new LandingPage();
-        LoginPage loginPage = landingPage.clickLoginButton();
-        Thread.sleep(2000);
-        EmailLoginPage emailLoginPage = loginPage.continueWithEmail();
-        HomePage homePage = emailLoginPage.submitEmailLogin(testData.email,testData.password);
+        TestUtil.loginWithEmail(testData.email);
+        HomePage homePage = new HomePage();
         Thread.sleep(2000);
 
         homePage.navigateToProfile();
@@ -84,16 +63,17 @@ public class LoginTest extends AndroidBaseTest {
         */
     }
 
-    @Test(priority = 3,groups = "Login")
+    @Test(priority = 2,groups = "Login")
     public void loginWithEmail() throws InterruptedException {
         System.out.printf("Begin test: %s",testName);
         TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
 
         LandingPage landingPage = new LandingPage();
-        LoginPage loginPage = landingPage.clickLoginButton();
+        EmailLoginPage loginPage = landingPage.clickLoginButton();
         Thread.sleep(2000);
-        EmailLoginPage emailLoginPage = loginPage.continueWithEmail();
-        HomePage homePage = emailLoginPage.submitEmailLogin(testData.email,testData.password);
+
+        loginPage.submitEmailLogin(testData.email);
+        HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.welcomeGreeting.isDisplayed());
     }
 }

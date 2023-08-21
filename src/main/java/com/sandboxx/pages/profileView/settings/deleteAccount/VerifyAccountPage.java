@@ -42,9 +42,26 @@ public class VerifyAccountPage extends BasePage {
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_with_social")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement continueWithSocialBtn;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_with_social")
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/terms_and_conditions")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement termsAndConditionsLink;
+
+    // Social Login
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Social Log In']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement socialLoginHeader;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Use one of the below accounts to log in']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement socialLoginSubHeader;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE WITH GOOGLE']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement continueWithGoogleBtn;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CONTINUE WITH FACEBOOK']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement continueWithFacebookBtn;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='CANCEL']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement cancelBtn;
 
     @Override
     public boolean isAt() {
@@ -64,5 +81,9 @@ public class VerifyAccountPage extends BasePage {
     public EmailVerificationPage continueWithEmail(){
         continueWithEmailBtn.click();
         return new EmailVerificationPage();
+    }
+    public void continueWithGoogle(){
+        continueWithSocialBtn.click();
+        continueWithGoogleBtn.click();
     }
 }

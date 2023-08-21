@@ -5,6 +5,8 @@ import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.LandingPage;
 import com.sandboxx.pages.MainNavigation;
 import com.sandboxx.pages.homeView.HomePage;
+import com.sandboxx.pages.loginPages.CodeVerificationPage;
+import com.sandboxx.pages.loginPages.EmailLoginPage;
 import com.sandboxx.pages.profileView.ProfilePage;
 import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
@@ -12,15 +14,21 @@ import com.sandboxx.pages.profileView.settings.deleteAccount.DeleteAccountPage;
 import com.sandboxx.pages.profileView.settings.deleteAccount.EmailVerificationPage;
 import com.sandboxx.pages.profileView.settings.deleteAccount.VerifyAccountPage;
 import com.sandboxx.pages.registration.*;
+import com.sandboxx.pages.registration.onboarding.BranchSelectionPage;
+import com.sandboxx.pages.registration.onboarding.BranchServicePage;
+import com.sandboxx.pages.registration.onboarding.SelectRecruitingStationPage;
+import com.sandboxx.pages.registration.onboarding.ShipDateSelectPage;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Set;
 import java.util.UUID;
 
 public class TestUtil {
@@ -75,18 +83,21 @@ public class TestUtil {
 
         LandingPage landingPage = new LandingPage();
         SignUpPage signUpPage = landingPage.clickSignUpButton();
-
-        EmailSignUpPage emailSignUpPage = signUpPage.clickContinueWithEmail();
-        emailSignUpPage.fillEmailForm(user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword());
-        emailSignUpPage.showPasswordIcon.click();
-        emailSignUpPage.continueButton.click();
-
-        PhoneConfirmationPage phoneConfirmationPage = new PhoneConfirmationPage();
-        phoneConfirmationPage.submitPhoneConfirmation(user.getPhoneNumber());
+        signUpPage.submitEmail(user.getEmail());
 
         VerificationCodePage verificationCodePage = new VerificationCodePage();
-        UseSandboxxPage useSandboxxPage =  verificationCodePage.submitVerificationCode("123456");
+        verificationCodePage.submitVerificationCode("123456");
 
+        FinishSignupMainPage finishSignupMainPage = new FinishSignupMainPage();
+        finishSignupMainPage.finishSignUpButton.click();
+
+        FinishSignUpForm finishSignUpForm = new FinishSignUpForm();
+        finishSignUpForm.submitForm(user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword());
+
+        SignUpSuccessPage signUpSuccessPage = new SignUpSuccessPage();
+        signUpSuccessPage.continueButton.click();
+
+        UseSandboxxPage useSandboxxPage =  new UseSandboxxPage();
         BranchSelectionPage branchSelectionPage =  useSandboxxPage.selectBasicTraining();
 
         BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
@@ -129,11 +140,110 @@ public class TestUtil {
         //landingPageLoggedOut.isAt();
     }
 
-    public static void loginWithEmail(){
+    public static HomePage loginWithEmail(String email) throws InterruptedException {
+        System.out.println(">>> Begin Login with Email flow");
 
+        LandingPage landingPage = new LandingPage();
+
+        EmailLoginPage loginPage = landingPage.clickLoginButton();
+        loginPage.submitEmailLogin(email);
+
+        CodeVerificationPage codeVerificationPage = new CodeVerificationPage();
+        codeVerificationPage.submitVerificationCode("123456");
+
+        return new HomePage();
+    }
+    public static boolean loginWithPassword(String email,String password) throws InterruptedException {
+        System.out.println(">>> Begin Login with Email & Password flow");
+
+        LandingPage landingPage = new LandingPage();
+
+        EmailLoginPage loginPage = landingPage.clickLoginButton();
+        loginPage.continueWithPassword(email,password);
+        if(loginPage.loginFailed()){
+            AppDriver.getDriver().navigate().back();
+           return false;
+        }
+
+        HomePage homePage = new HomePage();
+        return true;
     }
 
     public static void logout(){
+        System.out.println(">>> Begin Log Out Flow.");
+        MainNavigation mainNavigation = new MainNavigation();
+        mainNavigation.profileButton.click();
 
+        ProfilePage profilePage = new ProfilePage();
+        SettingsPage settings = profilePage.tapSettings();
+
+        PageActionsHelper.scrollDown();
+        settings.tapLogout();
+    }
+
+    public static void loginAndDeleteAccountByEmailPassword(String email, String password) throws InterruptedException {
+        System.out.println(">>> Begin loginAndDeleteAccountByEmail");
+
+        if(loginWithPassword(email,password)){
+            deleteAccountByEmail(email,password);
+        }
+
+        // asfasdf@mail.com
+
+//        EmailLoginPage emailLoginPage = loginPage.continueWithEmail();
+//        emailLoginPage.loginWithEmail(email,password);
+//        if(!emailLoginPage.loginFailed()){
+//            deleteAccountByEmail(email,password);
+//        }
+    }
+
+    public static HashMap<String, String> getTestData(String testData){
+        HashMap<String, String> formattedData = new HashMap<>();
+        String[] keyValuePair = testData.split(",");
+        for(String pair : keyValuePair){
+            String[] keyValue = pair.split(":");
+            if(keyValue.length == 2){
+                String key = keyValue[0];
+                String value = keyValue[1];
+                formattedData.put(key,value);
+            }
+        }
+        return formattedData;
+    }
+
+    public static void switchToWebContext() throws InterruptedException {
+        // Under development !!!
+
+        // Switch to Web Context
+        String currentContext = ((AndroidDriver)AppDriver.getDriver()).getContext();
+        System.out.println(">>> Current Context: "+currentContext);
+        System.out.println(">>> Context Handles: "+((AndroidDriver)AppDriver.getDriver()).getContextHandles());
+
+        //signUpPage.continueWithFacebook(); Perform Action (Click button that opens web context/page)
+
+        String afterClickContext = ((AndroidDriver)AppDriver.getDriver()).getContext(); // Get current context
+        System.out.println("After Click Context: "+afterClickContext);
+        System.out.println("After Click Handles: "+((AndroidDriver)AppDriver.getDriver()).getContextHandles());
+
+        Set<String> handles = ((AndroidDriver)AppDriver.getDriver()).getContextHandles(); // Get all handles/ context
+        for(String contextName : handles){
+            System.out.println("context name: "+contextName); // print all context names
+        }
+
+        ((AndroidDriver)AppDriver.getDriver()).context((String) handles.toArray()[1]);// Switch to web view
+        Thread.sleep(2000);
+        System.out.println("After Switching to Web Context: "+afterClickContext);
+
+        String pageSource = AppDriver.getDriver().getPageSource();
+        System.out.println("Page Source: "+pageSource);
+        AppDriver.getDriver().findElement(By.xpath("//input[@name='email']")).sendKeys("email");
+        Thread.sleep(1000);
+        AppDriver.getDriver().findElement(By.xpath("//input[@name='pass']")).sendKeys("password");
+        AppDriver.getDriver().findElement(By.xpath("//button[@name='login']")).click();
+
+        //driver.findElement(By.xpath("//a[text()='Get Started']")).click();
+        Thread.sleep(1000);
+        System.out.println("Switching Back to NATIVE APP");
+        ((AndroidDriver)AppDriver.getDriver()).context("NATIVE_APP"); //Switching back to Native view
     }
 }

@@ -1,7 +1,8 @@
-package com.sandboxx.pages.profileView;
+package com.sandboxx.pages.profileView.addressBook;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.profileView.addressBook.newContact.MailingAddressPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -50,5 +51,22 @@ public class AddressBookTab extends BasePage {
     public void waitForPage() {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchInputLocator));
+    }
+    public AddressBookTab(){waitForPage();}
+
+    public boolean isContactDisplayed(String contactName){
+        WebElement contactCard = AppDriver.getDriver()
+                .findElement(By.xpath("//android.widget.TextView[@text='"+contactName+"']/parent::android.widget.LinearLayout"));
+        //System.out.println("Checkbox checked bool: "+ Boolean.parseBoolean(isChecked));
+        return contactCard.isDisplayed();
+    }
+    public WebElement getContactCard(String contactName){
+        WebElement contactCard = AppDriver.getDriver()
+                .findElement(By.xpath("//android.widget.TextView[@text='"+contactName+"']/ancestor::android.widget.LinearLayout[@resource-id='com.sandboxx.android.dev:id/ll_address_book_entry']"));
+        return contactCard;
+    }
+    public MailingAddressPage addNewContact(){
+        newContactLabel.click();
+        return new MailingAddressPage();
     }
 }

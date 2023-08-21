@@ -11,32 +11,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ShipDateSelectPage extends BasePage {
+public class FinishSignupMainPage extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(3));
+    private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/finish_heading");
 
-    public String pageHeaderText = "What branch of service are they?";
-    private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/title_tv");
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Do you know your ship date?']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Great! Let’s finish setting up your account.']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageHeader;
-    @AndroidFindBy(xpath = "//android.widget.ImageButton")
+
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_verification_code")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement backButton;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Back']")
+    public WebElement pageSubHeader;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_verification_code")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement backLabel;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Yes']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement yesButton;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='No']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement noButton;
+    public WebElement finishSignUpButton;
 
     @Override
     public boolean isAt() {
-        return pageHeader.isDisplayed() && yesButton.isDisplayed()
-                && noButton.isDisplayed();
+        return pageHeader.isDisplayed() && pageSubHeader.isDisplayed();
     }
 
     @Override

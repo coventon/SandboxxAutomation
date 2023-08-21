@@ -5,6 +5,7 @@ import com.sandboxx.pages.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -90,6 +91,9 @@ public class EmailSignUpPage extends BasePage {
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/button_negative")
     @iOSXCUITFindBy(id = "")
     public WebElement cancelButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email already in use']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement emailInUseErrorTitle;
 
     @Override
     public boolean isAt() {
@@ -107,5 +111,14 @@ public class EmailSignUpPage extends BasePage {
         lastNameInput.sendKeys(lastName);
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
+    }
+
+    public boolean isErrorPresent(){
+        try{
+            return emailInUseErrorTitle.isDisplayed();
+        }
+        catch (NoSuchElementException e){
+            return false;
+        }
     }
 }

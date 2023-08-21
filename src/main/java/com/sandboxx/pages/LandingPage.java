@@ -1,6 +1,7 @@
 package com.sandboxx.pages;
 
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.pages.loginPages.EmailLoginPage;
 import com.sandboxx.pages.loginPages.LoginPage;
 import com.sandboxx.pages.registration.SignUpPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -68,8 +69,8 @@ public class LandingPage extends BasePage{
         return new SignUpPage();
     }
 
-    public LoginPage clickLoginButton(){
+    public EmailLoginPage clickLoginButton(){
         loginButton.click();
-        return new LoginPage();
+        return new EmailLoginPage();
     }
 }

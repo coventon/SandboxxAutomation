@@ -3,6 +3,7 @@ package com.sandboxx.pages.homeView;
 import com.sandboxx.dataManagement.constants.GoTo;
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.homeView.letters.RecipientPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -36,9 +37,9 @@ public class HomePage extends BasePage {
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/tv_dsh_graduation_text")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement graduationText;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/button_settings")
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/fab_compose")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement settingsButton;
+    public WebElement composeButton;
 
     public HomePage(){
         createMainNavigation();
@@ -56,6 +57,11 @@ public class HomePage extends BasePage {
 
     public void navigateToProfile(){
         navigateTo(GoTo.Sandboxx_Profile);
+    }
+
+    public RecipientPage tapCompose(){
+        composeButton.click();
+        return new RecipientPage();
     }
 
 }

@@ -17,7 +17,7 @@ public class VerificationCodePage extends BasePage {
 
     public String pageHeaderText = "Enter the verification code we just sent you.";
     private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/label_header");
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/label_header")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter the verification code we just sent you.']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageHeader;
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_verification_code")
@@ -26,7 +26,7 @@ public class VerificationCodePage extends BasePage {
 
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/btn_verify")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement verifyButton;
+    public WebElement continueButton;
 
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/btn_resend_sms")
     @iOSXCUITFindBy(accessibility = "")
@@ -44,9 +44,9 @@ public class VerificationCodePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
 
-    public UseSandboxxPage submitVerificationCode(String code){
+    public void submitVerificationCode(String code){
         verificationCodeInput.sendKeys(code);
-        verifyButton.click();
-        return new UseSandboxxPage();
+        continueButton.click();
+        //return new UseSandboxxPage();
     }
 }

@@ -1,7 +1,8 @@
-package com.sandboxx.pages.registration;
+package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.registration.WelcomePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -79,5 +80,9 @@ public class BranchServicePage extends BasePage {
     public SelectRecruitingStationPage selectAirForce(){
         airForceHeader.click();
         return new SelectRecruitingStationPage();
+    }
+
+    public void selectNavy(){
+        navyCard.click();
     }
 }

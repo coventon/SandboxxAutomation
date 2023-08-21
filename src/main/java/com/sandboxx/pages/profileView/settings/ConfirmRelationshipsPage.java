@@ -2,6 +2,7 @@ package com.sandboxx.pages.profileView.settings;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.registration.WelcomePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -62,5 +63,10 @@ public class ConfirmRelationshipsPage extends BasePage {
 
 
         return contactImage.isDisplayed() && relation.isDisplayed();
+    }
+
+    public WelcomePage tapImport(){
+        importButton.click();
+        return new WelcomePage();
     }
 }

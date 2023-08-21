@@ -15,7 +15,6 @@ import java.time.Duration;
 public class CodeVerificationPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(3));
 
-    public String pageHeaderText = "Enter the verification code we just sent you.";
     private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/label_header");
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter the verification code we just sent you.']")
     @iOSXCUITFindBy(accessibility = "")
@@ -34,8 +33,7 @@ public class CodeVerificationPage extends BasePage {
 
     @Override
     public boolean isAt() {
-        return pageHeader.isDisplayed() && verificationCodeInput.isDisplayed()
-                && pageHeader.getText().equals(pageHeaderText);
+        return pageHeader.isDisplayed() && verificationCodeInput.isDisplayed();
     }
 
     @Override
@@ -43,10 +41,13 @@ public class CodeVerificationPage extends BasePage {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
+    public CodeVerificationPage(){
+        waitForPage();
+    }
 
-    public UseSandboxxPage submitVerificationCode(String code){
+    public void submitVerificationCode(String code){
         verificationCodeInput.sendKeys(code);
         verifyButton.click();
-        return new UseSandboxxPage();
+        //return new UseSandboxxPage();
     }
 }

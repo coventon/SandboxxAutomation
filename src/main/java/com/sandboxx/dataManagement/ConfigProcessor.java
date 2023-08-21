@@ -54,7 +54,12 @@ public class ConfigProcessor {
     /// #Android
     public static String getAndroidDevice(){return properties.getProperty("androidDevice");}
     public static String getEmulatorName(){return properties.getProperty("emulatorName");}
+    public static String getEmulatorWithPlayName(){return properties.getProperty("emulatorPlayName");}
     public static String getAndroidRealDeviceName(){return properties.getProperty("AndroidRealDeviceName");}
     public static String getAndroidRealDevicePlatformVersion(){return properties.getProperty("AndroidRealDevicePlatformVersion");}
+
+    // # Api
+    public static String getSandboxxApiEmail(){return properties.getProperty("sandboxxApiEmail");}
+    public static String getSandboxxApiPwd(){return properties.getProperty("apiPassword");}
 
 }
