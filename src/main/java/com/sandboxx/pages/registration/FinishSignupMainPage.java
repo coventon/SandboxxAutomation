@@ -20,10 +20,14 @@ public class FinishSignupMainPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageHeader;
 
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_verification_code")
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/finish_subtitle")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageSubHeader;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_verification_code")
+
+    //@AndroidFindBy(xpath = "//android.widget.TextView[@text='Whether you are heading off to basic training, an active duty member of the military, or a supporter, Sandboxx is here to support you through your military journey.']")
+    //@iOSXCUITFindBy(accessibility = "")
+    //public WebElement pageSubHeader;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_btn")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement finishSignUpButton;
 

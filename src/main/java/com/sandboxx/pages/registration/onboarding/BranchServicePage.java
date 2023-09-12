@@ -73,9 +73,14 @@ public class BranchServicePage extends BasePage {
         waitForPage();
     }
 
-    public WelcomePage selectMarineCorp(){
+//    public WelcomePage selectMarineCorp(){
+//        marineCorpsHeader.click();
+//        return new WelcomePage();
+//    }
+
+    public void selectMarineCorp(){
         marineCorpsHeader.click();
-        return new WelcomePage();
+        //return new SelectRecruitingStationPage();
     }
     public SelectRecruitingStationPage selectAirForce(){
         airForceHeader.click();

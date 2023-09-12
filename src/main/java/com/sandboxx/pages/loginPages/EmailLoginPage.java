@@ -7,6 +7,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -55,13 +56,13 @@ public class EmailLoginPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement continueWithSocial;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Don’t have an account?']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Don’t have an account?\"]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement noAccountLabel;
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/text_signup")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement signUpLink;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Don’t have an account?']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email password combination is not valid']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement invalidCredentialsAlert;
 
@@ -105,12 +106,12 @@ public class EmailLoginPage extends BasePage {
     }
 
     public boolean loginFailed() throws InterruptedException {
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         try{
-            new HomePage();
-            return invalidCredentialsAlert.isDisplayed() || pageHeader.isDisplayed();
+            //new HomePage();
+            return invalidCredentialsAlert.isDisplayed(); //|| pageHeader.isDisplayed();
         }
-        catch (NoSuchElementException e){
+        catch (NoSuchElementException | StaleElementReferenceException e){
             return false;
         }
     }

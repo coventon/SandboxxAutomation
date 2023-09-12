@@ -42,6 +42,7 @@ public class InviteFriendsPage extends BasePage {
         wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
+    public InviteFriendsPage(){waitForPage();}
 
     public WelcomePage tapNoThanks(){
         noThanksButton.click();

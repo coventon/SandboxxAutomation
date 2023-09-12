@@ -33,6 +33,7 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Date;
 
 //@Listeners(TestListener.class)
@@ -42,6 +43,7 @@ public class AndroidBaseTest {
     public static ExtentSparkReporter sparkReporter;
     public static ExtentTest extentLogger;
     public String testName;
+    public String [] testCategories;
     static protected int testsPassed;
     static protected int testsFailed;
     static protected LocalDateTime testStartDateTime;
@@ -87,7 +89,15 @@ public class AndroidBaseTest {
     public void methodSetUp(Method method) throws MalformedURLException {
         System.out.println(">>> Before Method: Launching Driver and Starting App");
         testName = method.getName();
+        // # Get Category
+        Test t = method.getAnnotation(Test.class);
+        testCategories = t.groups();
+        boolean containsGooglePlay = Arrays.stream(testCategories).anyMatch("GooglePlay"::equalsIgnoreCase);
+        System.out.println(">>> Test Category contains 'GooglePlay': "+ containsGooglePlay);
+        System.out.println(">>> Test Categories: "+ Arrays.toString(t.groups()));
+
         extentLogger = extentReport.createTest(">>> ExtentReport creating test: " + testName);
+        AppFactory.setAndroidEmulatorName(containsGooglePlay);
         AppFactory.android_LaunchApp();
         //AppFactory.android_Demo_LaunchApp();
     }

@@ -1,4 +1,5 @@
 package com.sandboxx.framework.base;
+
 import com.sandboxx.dataManagement.ConfigProcessor;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,13 +17,17 @@ import java.util.concurrent.TimeUnit;
 public class AppFactory {
 
     public static AppiumDriver driver;
+    private static String androidEmulatorName;
 
     public static void android_LaunchApp() throws MalformedURLException {
         String androidAppPath = ConfigProcessor.getAndroidApp();
         System.out.println(">>> Starting Android App: Sanboxx");
         String serverUrl = AppiumServer.getAppiumServerUrl();
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName("emulator-5554")
+        options
+                //.setDeviceName("emulator-5554")
+                .setDeviceName(androidEmulatorName)
+                .setUdid(androidEmulatorName)
                 .setAppWaitForLaunch(true)
                 .setAutomationName("UiAutomator2")
                 .setPlatformName("Android")
@@ -32,13 +37,13 @@ public class AppFactory {
                 .setAppPackage("com.sandboxx.android.dev")
                 .setAppActivity("com.sandboxx.android.features.startup.SplashActivity") // Logged in Activity: com.sandboxx.android.features.startup.LandingActivity
                 .setAutoGrantPermissions(true)
-                .setChromedriverExecutableDir(System.getProperty("user.dir"+"/drivers/chrome/chromedriver_mac64/chromedriver"))
-                .setChromedriverExecutable(System.getProperty("user.dir"+"/drivers/chrome/chromedriver_mac64/chromedriver"))
+                .setChromedriverExecutableDir(System.getProperty("user.dir" + "/drivers/chrome/chromedriver_mac64/chromedriver"))
+                .setChromedriverExecutable(System.getProperty("user.dir" + "/drivers/chrome/chromedriver_mac64/chromedriver"))
                 .setNewCommandTimeout(Duration.ofMillis(8000))
                 .setNoReset(false);
 
         System.out.println(">>> Initializing Android Driver");
-        driver = new AndroidDriver(new URL(serverUrl),options);
+        driver = new AndroidDriver(new URL(serverUrl), options);
         //WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
         AppDriver.setDriver(driver);
@@ -51,7 +56,7 @@ public class AppFactory {
         String androidAppPath = ConfigProcessor.getAndroidApp();
         System.out.println(">>> Starting Sandboxx App on Android Real Device");
         String serverUrl = AppiumServer.getAppiumServerUrl();
-        String androidRealDeviceName= ConfigProcessor.getAndroidRealDeviceName();
+        String androidRealDeviceName = ConfigProcessor.getAndroidRealDeviceName();
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName(androidRealDeviceName)
                 .setAppWaitForLaunch(true)
@@ -66,7 +71,7 @@ public class AppFactory {
                 .setNoReset(false);
 
         System.out.println(">>> Initializing Android Driver");
-        driver = new AndroidDriver(new URL(serverUrl),options);
+        driver = new AndroidDriver(new URL(serverUrl), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
         AppDriver.setDriver(driver);
 
@@ -86,7 +91,7 @@ public class AppFactory {
                 .setBundleId("com.saucelabs.mydemoapp.rn"); //com.saucelabs.mydemoapp.rn || org.wdioNativeDemoApp
 
         System.out.println(">>> Initializing Android Driver");
-        driver = new IOSDriver(new URL(serverUrl),options);
+        driver = new IOSDriver(new URL(serverUrl), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
 
         AppDriver.setDriver(driver);
@@ -99,11 +104,21 @@ public class AppFactory {
         throw new Exception("Method Not Yet Implemented");
     }
 
-    public static void closeApp(){
+    public static void closeApp() {
         driver.quit();
     }
 
-
+    public static void setAndroidEmulatorName(boolean withGooglePlay){
+        System.out.println(">>>>>> Contains GooglePlay: "+withGooglePlay);
+        if(withGooglePlay){
+            androidEmulatorName = ConfigProcessor.getEmulatorWithPlayName();
+            System.out.println(">>>>> Emulator Name: "+ androidEmulatorName);
+        }
+        else {
+            androidEmulatorName = ConfigProcessor.getEmulatorName();
+            System.out.println(">>>>> Emulator Name: "+ androidEmulatorName);
+        }
+    }
 
 
     // =================== Demo ios app launch method ==========================
@@ -120,7 +135,7 @@ public class AppFactory {
                 .setBundleId(bundleID);
 
         System.out.println(">>> Initializing iOS Driver");
-        driver = new IOSDriver(new URL(serverUrl),options);
+        driver = new IOSDriver(new URL(serverUrl), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
 
         AppDriver.setDriver(driver);
@@ -150,7 +165,7 @@ public class AppFactory {
                 .setNoReset(false);
 
         System.out.println(">>> Initializing Android Driver");
-        driver = new AndroidDriver(new URL(serverUrl),options);
+        driver = new AndroidDriver(new URL(serverUrl), options);
         //WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigProcessor.getTimeout()));
         AppDriver.setDriver(driver);

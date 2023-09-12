@@ -1,6 +1,7 @@
 package com.sandboxx.pages.profileView.addressBook.newContact;
 
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.framework.utils.PageActionsHelper;
 import com.sandboxx.pages.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -65,7 +66,7 @@ public class SelectBasePage extends BasePage {
     // Army
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Navy']")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement nacyHeader;
+    public WebElement navyHeader;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='GREAT LAKES, IL']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement greatLakes;
@@ -96,6 +97,10 @@ public class SelectBasePage extends BasePage {
                 break;
             case "PARRIS ISLAND":
                 parrisIsnand.click();
+                break;
+            case "GREAT LAKES":
+                PageActionsHelper.scrollDown();
+                greatLakes.click();
                 break;
         }
     }

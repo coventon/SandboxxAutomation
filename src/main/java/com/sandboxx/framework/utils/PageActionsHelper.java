@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.sandboxx.framework.base.AppDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -226,5 +227,27 @@ public class PageActionsHelper {
         new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(byEl));
     }
 
+    // Tap on element by coordinates (Link in the text)
+    protected static void tapAtPoint(Point point){
+        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH,"finger1");
+        Sequence tap = new Sequence(input,0);
+        tap.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),point.x,point.y));
+        tap.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(input,Duration.ofMillis(200)));
+        tap.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        ((RemoteWebDriver)AppDriver.getDriver()).perform(ImmutableList.of(tap));
+    }
+
+    public static void tapElement(WebElement el){
+        tapElementAt(el, 0.5,0.5);
+    }
+    public static void tapElementAt(WebElement el,double xPct, double yPct){
+        Rectangle elRect = el.getRect();
+        Point point = new Point(
+                elRect.x + (int)(elRect.getWidth() * xPct),
+                elRect.y + (int)(elRect.getHeight() * yPct)
+        );
+        tapAtPoint(point);
+    }
 
 }

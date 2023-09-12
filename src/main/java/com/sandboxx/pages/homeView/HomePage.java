@@ -3,7 +3,9 @@ package com.sandboxx.pages.homeView;
 import com.sandboxx.dataManagement.constants.GoTo;
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.homeView.giftCards.GiftCardsPage;
 import com.sandboxx.pages.homeView.letters.RecipientPage;
+import com.sandboxx.pages.inviteView.InvitePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -41,6 +43,38 @@ public class HomePage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement composeButton;
 
+    // Letters section
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Letters']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement lettersHeader;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/tv_dsh_credit_count")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement lettersCreditCount;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Letters\n" + "Remaining']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement purchaseCreditsButton;
+
+    // # Gift Cards Section
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Send a Sandboxx Gift Card to your \n" + " recruit or service member']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement giftCardsTitle;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='GIFT CARDS']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement giftCardsButton;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/image_my_wallet")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement giftCardsImage;
+
+    // Referral Section
+    //android.widget.TextView[@text='Give a Letter, Get a Letter']
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Give a Letter, Get a Letter']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement referralTitle;
+    //android.widget.Button[@text='REFER A FRIEND']
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='REFER A FRIEND']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement referFriendButton;
+
     public HomePage(){
         createMainNavigation();
     }
@@ -62,6 +96,16 @@ public class HomePage extends BasePage {
     public RecipientPage tapCompose(){
         composeButton.click();
         return new RecipientPage();
+    }
+
+    public GiftCardsPage navigateToGiftCards(){
+        giftCardsButton.click();
+        return new GiftCardsPage();
+    }
+
+    public InvitePage tapReferFriend(){
+        referFriendButton.click();
+        return new InvitePage();
     }
 
 }

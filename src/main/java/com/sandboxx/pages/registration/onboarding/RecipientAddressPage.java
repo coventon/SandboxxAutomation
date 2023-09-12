@@ -2,6 +2,7 @@ package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.profileView.addressBook.newContact.MailingAddressPage;
 import com.sandboxx.pages.registration.WelcomePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -40,8 +41,9 @@ public class RecipientAddressPage extends BasePage {
     }
     public RecipientAddressPage(){waitForPage();}
 
-    public void selectYes(){
+    public MailingAddressPage selectYes(){
         yesCard.click();
+        return new MailingAddressPage();
     }
     public WelcomePage selectNo(){
         noCard.click();

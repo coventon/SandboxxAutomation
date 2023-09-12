@@ -16,7 +16,7 @@ public class BranchSelectionPage extends BasePage {
 
     public String pageHeaderText = "What branch of service are they?";
     private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/heading_text");
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Send letters')]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'What branch of service are they?')]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageHeader;
 

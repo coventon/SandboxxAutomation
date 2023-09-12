@@ -73,6 +73,10 @@ public class LoginTest extends AndroidBaseTest {
         Thread.sleep(2000);
 
         loginPage.submitEmailLogin(testData.email);
+
+        CodeVerificationPage codeVerificationPage = new CodeVerificationPage();
+        codeVerificationPage.submitVerificationCode("123456");
+
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.welcomeGreeting.isDisplayed());
     }

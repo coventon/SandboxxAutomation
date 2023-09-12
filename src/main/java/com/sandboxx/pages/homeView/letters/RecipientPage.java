@@ -2,6 +2,7 @@ package com.sandboxx.pages.homeView.letters;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.profileView.addressBook.currentContact.CurrentContactPage;
 import com.sandboxx.pages.profileView.addressBook.newContact.MailingAddressPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -88,7 +89,8 @@ public class RecipientPage extends BasePage {
         return contactCard;
     }
 
-    public void selectContact(String contactName){
+    public CurrentContactPage selectContact(String contactName){
         getContactCard(contactName).click();
+        return new CurrentContactPage();
     }
 }

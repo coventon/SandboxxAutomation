@@ -6,6 +6,7 @@ public abstract class Person {
     private String email;
     private String password;
     private String phoneNumber;
+    private Address address;
 
     public Person(String firstName, String lastName, String email, String phoneNumber,String password){
         this.firstName = firstName;
@@ -13,6 +14,11 @@ public abstract class Person {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
+    }
+    public Person(String firstName, String lastName, String email){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
     public String getFirstName() {
         return firstName;
@@ -53,4 +59,16 @@ public abstract class Person {
         this.password = password;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getFormattedSenderInfo(){
+        return firstName + " " + lastName+"\n" + address.getAddress()+"\n"+
+        address.getCity() +", "+address.getState()+" "+address.getZipCode();
+    }
 }

@@ -21,10 +21,13 @@ public class AddressReviewPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Please confirm the address below to ensure your letter is delivered.']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageSubHeader;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Review']")
+    @AndroidFindBy(xpath = "//android.widget.ImageButton")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement backButton;
-    //1ST RTBN ALPHA CO PLT 1102
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Review']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement reviewLabel;
+
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/name_tv")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement contactRankName;
@@ -44,7 +47,7 @@ public class AddressReviewPage extends BasePage {
 
     @Override
     public boolean isAt() {
-        return pageHeader.isDisplayed() && backButton.isDisplayed()
+        return pageHeader.isDisplayed() && reviewLabel.isDisplayed()
                 && pageSubHeader.isDisplayed();
     }
 

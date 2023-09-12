@@ -165,7 +165,7 @@ public class TestUtil {
            return false;
         }
 
-        HomePage homePage = new HomePage();
+        //HomePage homePage = new HomePage();
         return true;
     }
 
@@ -195,6 +195,20 @@ public class TestUtil {
 //        if(!emailLoginPage.loginFailed()){
 //            deleteAccountByEmail(email,password);
 //        }
+    }
+
+    public static void deleteAccountGoogle(){
+        System.out.println(">>> Begin Delete Account By Google.");
+        MainNavigation mainNavigation = new MainNavigation();
+        mainNavigation.profileButton.click();
+
+        ProfilePage profilePage = new ProfilePage();
+        SettingsPage settings = profilePage.tapSettings();
+        VerifyAccountPage verifyAccountPage = settings.tapDeleteAccount();
+        verifyAccountPage.continueWithGoogle();
+        DeleteAccountPage deleteAccountPage = new DeleteAccountPage();
+        deleteAccountPage.deleteAccountCheckBox.click();
+        deleteAccountPage.deleteAccount();
     }
 
     public static HashMap<String, String> getTestData(String testData){
@@ -245,5 +259,47 @@ public class TestUtil {
         Thread.sleep(1000);
         System.out.println("Switching Back to NATIVE APP");
         ((AndroidDriver)AppDriver.getDriver()).context("NATIVE_APP"); //Switching back to Native view
+    }
+
+    public void switchToWebContext2(){
+        Set<String>  handles = ((AndroidDriver)AppDriver.getDriver()).getContextHandles();
+        System.out.println(handles);
+        if (((AndroidDriver)AppDriver.getDriver()).getContext().equals("NATIVE_APP")){
+            ((AndroidDriver)AppDriver.getDriver()).context("CHROMIUM");
+            System.out.println("Switched to WebView");
+        } else if (((AndroidDriver)AppDriver.getDriver()).getContext().equals("CHROMIUM")){
+            System.out.println("Was Already On WebView");
+        }
+    }
+
+    public void switchToNativeContext(){
+        Set a = ((AndroidDriver)AppDriver.getDriver()).getContextHandles();
+        System.out.println(a);
+        if (((AndroidDriver)AppDriver.getDriver()).getContext().equals("NATIVE_APP")){
+            System.out.println("Was Already On Native");
+        } else if (((AndroidDriver)AppDriver.getDriver()).getContext().equals("CHROMIUM")){
+            ((AndroidDriver)AppDriver.getDriver()).context("NATIVE_APP");
+            System.out.println("Switched to Native");
+        }
+    }
+
+    public void getElementBackgroundColor(){
+//        MobileElement elem = (MobileElement) driver.findElement(By.id("loginButton"));
+//
+//        org.openqa.selenium.Point point = elem.getCenter();
+//        int centerX = point.getX();
+//        int centerY = point.getY();
+//
+//        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//
+//        BufferedImage image = ImageIO.read(scrFile);
+//// Getting pixel color by position x and y
+//        int clr = image.getRGB(centerX,centerY);
+//        int red   = (clr & 0x00ff0000) >> 16;
+//        int green = (clr & 0x0000ff00) >> 8;
+//        int blue  =  clr & 0x000000ff;
+//        System.out.println("Red Color value = "+ red);
+//        System.out.println("Green Color value = "+ green);
+//        System.out.println("Blue Color value = "+ blue);
     }
 }
