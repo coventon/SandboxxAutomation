@@ -39,7 +39,7 @@ public class AppFactory {
                 .setAutoGrantPermissions(true)
                 .setChromedriverExecutableDir(System.getProperty("user.dir" + "/drivers/chrome/chromedriver_mac64/chromedriver"))
                 .setChromedriverExecutable(System.getProperty("user.dir" + "/drivers/chrome/chromedriver_mac64/chromedriver"))
-                .setNewCommandTimeout(Duration.ofMillis(8000))
+                .setNewCommandTimeout(Duration.ofMillis(5000))
                 .setNoReset(false);
 
         System.out.println(">>> Initializing Android Driver");

@@ -14,31 +14,43 @@ import java.time.Duration;
 public class VerifyAccountPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(3));
 
-    private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/text_title_verify_account");
+    private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/email_account_verification_header");
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify Your Account']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageHeader;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Before you can proceed, you must verify your account by logging in with your email, phone, or social account below.']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Before you can proceed, you must verify your account by logging in with your email, or social account below.']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement pageSubHeader;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/edittext_phone_number")
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email']")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement phoneInput;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/button_continue_with_phone_number")
+    public WebElement emailLabel;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_login_email")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement emailInput;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Password']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement passwordLabel;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/et_login_password")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement passwordInput;
+    @AndroidFindBy(accessibility = "Show password")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement showPwdButton;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/tv_forgot_password")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement forgotPasswordLink;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_button")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement continueButton;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"We’ll text you a code to verify your number. Standard message and data rates apply.\"]")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement buttonSubheader;
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/layout_or_barrier")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement layoutBarrier;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='OR']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement barrierLabel;
-    @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_with_email")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement continueWithEmailBtn;
+
+
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/continue_with_social")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement continueWithSocialBtn;
@@ -65,7 +77,7 @@ public class VerifyAccountPage extends BasePage {
 
     @Override
     public boolean isAt() {
-        return pageHeader.isDisplayed() && pageSubHeader.isDisplayed() && phoneInput.isDisplayed();
+        return pageHeader.isDisplayed() && pageSubHeader.isDisplayed() && emailInput.isDisplayed();
     }
 
     @Override
@@ -78,9 +90,10 @@ public class VerifyAccountPage extends BasePage {
         waitForPage();
     }
 
-    public EmailVerificationPage continueWithEmail(){
-        continueWithEmailBtn.click();
-        return new EmailVerificationPage();
+    public void submitEmailAndPassword(String email,String password){
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        continueButton.click();
     }
     public void continueWithGoogle(){
         continueWithSocialBtn.click();

@@ -91,4 +91,8 @@ public class UseSandboxxPage extends BasePage {
         sendLettersCard.click();
         return new DescribeYouPage();
     }
+    public BranchSelectionPage selectManageMyRecruits(){
+        manageRecruitsCard.click();
+        return new BranchSelectionPage();
+    }
 }

@@ -73,6 +73,9 @@ public class SelectBasePage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='NEWPORT, RI']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement newport;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='JBSA LACKLAND AFB, TX']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement lackland;
 
     @Override
     public boolean isAt() {
@@ -101,6 +104,10 @@ public class SelectBasePage extends BasePage {
             case "GREAT LAKES":
                 PageActionsHelper.scrollDown();
                 greatLakes.click();
+                break;
+            case "JBSA LACKLAND AFB":
+                PageActionsHelper.scrollDown();
+                lackland.click();
                 break;
         }
     }

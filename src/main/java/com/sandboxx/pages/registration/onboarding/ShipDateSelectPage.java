@@ -2,6 +2,7 @@ package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -33,6 +34,20 @@ public class ShipDateSelectPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement noButton;
 
+    // Date Picker
+    @AndroidFindBy(id = "android:id/date_picker_header_year")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement currentYear;
+    @AndroidFindBy(id = "android:id/date_picker_header_date")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement currentDate;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement cancelButton;
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='OK']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement okButton;
+
     @Override
     public boolean isAt() {
         return pageHeader.isDisplayed() && yesButton.isDisplayed()
@@ -47,5 +62,16 @@ public class ShipDateSelectPage extends BasePage {
 
     public ShipDateSelectPage(){
         waitForPage();
+    }
+
+    public void tapYes(){
+        yesButton.click();
+    }
+    public void tapDatePickerOK(){
+        okButton.click();
+    }
+    public InviteFriendsPage tapNo(){
+        noButton.click();
+        return new InviteFriendsPage();
     }
 }

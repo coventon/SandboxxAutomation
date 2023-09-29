@@ -2,6 +2,7 @@ package com.sandboxx.pages.homeView.letters.purchaseLetters;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.profileView.ProfilePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -30,10 +31,22 @@ public class CheckoutPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Support Corporal']/following-sibling::android.widget.TextView")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement supportCorporalPrice;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Tax 6%']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Support Commander']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement supportCommanderLabel;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Support Commander']/following-sibling::android.widget.TextView")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement supportCommanderPrice;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Savings']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement savingsLabel;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Savings']/following-sibling::android.widget.TextView")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement savingsAmount;
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Tax ')]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement taxLabel;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Tax 6%']/following-sibling::android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Tax ')]/following-sibling::android.widget.TextView")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement taxPrice;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Total']")
@@ -42,10 +55,12 @@ public class CheckoutPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Total']/following-sibling::android.widget.TextView")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement totalPrice;
-    //android.widget.TextView[@text='Payment Method']
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Payment Method']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement paymentMethodHeader;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/tv_bundle_payment_method")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement paymentMethod;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Select Payment Method']")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement selectPaymentButton;
@@ -74,7 +89,7 @@ public class CheckoutPage extends BasePage {
     @Override
     public boolean isAt() {
         return pageHeader.isDisplayed() && summary.isDisplayed()
-                && supportCorporal.isDisplayed();
+                && paymentMethodHeader.isDisplayed();
     }
 
     @Override
@@ -92,6 +107,11 @@ public class CheckoutPage extends BasePage {
         paymentType.click();
     }
     public void tapPurchase(){
+        wait.until(ExpectedConditions.elementToBeClickable(purchaseButton));
         purchaseButton.click();
+    }
+    public ProfilePage continueWithPurchase(){
+        continueButton.click();
+        return new ProfilePage();
     }
 }

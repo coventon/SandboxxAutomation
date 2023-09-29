@@ -78,6 +78,9 @@ public class BranchServicePage extends BasePage {
 //        return new WelcomePage();
 //    }
 
+    public void selectArmy(){
+        armyCard.click();
+    }
     public void selectMarineCorp(){
         marineCorpsHeader.click();
         //return new SelectRecruitingStationPage();

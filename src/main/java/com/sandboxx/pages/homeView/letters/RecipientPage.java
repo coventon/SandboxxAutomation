@@ -1,17 +1,18 @@
 package com.sandboxx.pages.homeView.letters;
 
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.framework.utils.CustomWait;
 import com.sandboxx.pages.BasePage;
 import com.sandboxx.pages.profileView.addressBook.currentContact.CurrentContactPage;
 import com.sandboxx.pages.profileView.addressBook.newContact.MailingAddressPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class RecipientPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(3));
@@ -68,29 +69,71 @@ public class RecipientPage extends BasePage {
 
     @Override
     public void waitForPage() {
-        wait.until((e)->isAt());
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
+        wait.until((e) -> isAt());
     }
-    public RecipientPage(){waitForPage();}
 
-    public MailingAddressPage tapNewContact(){
+    public RecipientPage() {
+        waitForPage();
+    }
+
+    public MailingAddressPage tapNewContact() {
         newContactLabel.click();
         return new MailingAddressPage();
     }
-    public boolean isContactDisplayed(String contactName){
-        WebElement contactCard = AppDriver.getDriver()
-                .findElement(By.xpath("//android.widget.TextView[@text='"+contactName+"']/parent::android.widget.LinearLayout"));
-        //System.out.println("Checkbox checked bool: "+ Boolean.parseBoolean(isChecked));
-        return contactCard.isDisplayed();
+
+    public boolean isContactDisplayed(String contactName) {
+        try {
+            WebElement contactCard = AppDriver.getDriver()
+                    .findElement(By.xpath("//android.widget.TextView[@text='" + contactName + "']/parent::android.widget.LinearLayout"));
+            //System.out.println("Checkbox checked bool: "+ Boolean.parseBoolean(isChecked));
+            return contactCard.isDisplayed();
+        } catch (NoSuchElementException | StaleElementReferenceException e) {
+            return false;
+        }
     }
-    public WebElement getContactCard(String contactName){
+
+    public boolean isContactDisplayed2(String contactName) {
+        CustomWait customWait = new CustomWait(AppDriver.getDriver(), 200);
+
+        try {
+            //new HomePage();
+            return customWait.findElementWithCustomWait(By.xpath("//android.widget.TextView[@text='" + contactName + "']")).isDisplayed();
+            //return invalidCredentialsAlert.isDisplayed(); //|| pageHeader.isDisplayed();
+        } catch (NoSuchElementException | StaleElementReferenceException | TimeoutException e) {
+            return false;
+        }
+    }
+
+    public WebElement getContactCard(String contactName) {
         WebElement contactCard = AppDriver.getDriver()
-                .findElement(By.xpath("//android.widget.TextView[@text='"+contactName+"']/ancestor::android.widget.LinearLayout[@resource-id='com.sandboxx.android.dev:id/ll_address_book_entry']"));
+                .findElement(By.xpath("//android.widget.TextView[@text='" + contactName + "']/ancestor::android.widget.LinearLayout[@resource-id='com.sandboxx.android.dev:id/ll_address_book_entry']"));
         return contactCard;
     }
 
-    public CurrentContactPage selectContact(String contactName){
+    public CurrentContactPage selectContact(String contactName) {
         getContactCard(contactName).click();
         return new CurrentContactPage();
+    }
+
+    public void tapAddressBookTab() throws InterruptedException {
+        addressBookTab.click();
+        Thread.sleep(1000);
+    }
+
+    public boolean isContactCardDisplayed(String contactName) {
+
+        WebElement contactCard = null;
+
+        List<WebElement> contactList = AppDriver.getDriver().findElements(By.xpath("//androidx.recyclerview.widget.RecyclerView[@resource-id='com.sandboxx.android.dev:id/rc_users']//android.widget.TextView[@resource-id='com.sandboxx.android.dev:id/tv_contact_name']"));
+        for (WebElement e : contactList) {
+            if (e.getText().equals(contactName)) {
+                System.out.println("contact Name: " + e.getText());
+                contactCard = e;
+                break;
+            }
+        }
+
+        return contactCard != null;
     }
 }

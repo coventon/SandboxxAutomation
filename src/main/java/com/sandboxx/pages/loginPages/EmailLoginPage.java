@@ -1,14 +1,12 @@
 package com.sandboxx.pages.loginPages;
 
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.framework.utils.CustomWait;
 import com.sandboxx.pages.BasePage;
 import com.sandboxx.pages.homeView.HomePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -106,12 +104,14 @@ public class EmailLoginPage extends BasePage {
     }
 
     public boolean loginFailed() throws InterruptedException {
+        CustomWait customWait = new CustomWait(AppDriver.getDriver(),200);
         //Thread.sleep(3000);
         try{
             //new HomePage();
-            return invalidCredentialsAlert.isDisplayed(); //|| pageHeader.isDisplayed();
+            return  customWait.findElementWithCustomWait(By.xpath("//android.widget.TextView[@text='Email password combination is not valid']")).isDisplayed();
+            //return invalidCredentialsAlert.isDisplayed(); //|| pageHeader.isDisplayed();
         }
-        catch (NoSuchElementException | StaleElementReferenceException e){
+        catch (NoSuchElementException | StaleElementReferenceException |TimeoutException e){
             return false;
         }
     }

@@ -27,16 +27,16 @@ public class PhotoUploadPage extends BasePage {
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/empty_ll")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement photoPreview;
-    @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")
+    @AndroidFindBy(xpath = "//android.widget.GridView/android.view.ViewGroup[1]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement image1;
-    @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]")
+    @AndroidFindBy(xpath = "//android.widget.GridView/android.view.ViewGroup[2]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement image2;
-    @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]")
+    @AndroidFindBy(xpath = "//android.widget.GridView/android.view.ViewGroup[3]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement image3;
-    @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[4]")
+    @AndroidFindBy(xpath = "//android.widget.GridView/android.view.ViewGroup[4]")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement image4;
 

@@ -9,6 +9,7 @@ import com.sandboxx.framework.base.AppiumServer;
 import com.sandboxx.framework.utils.PageActionsHelper;
 import com.sandboxx.framework.utils.TestUtil;
 import com.sandboxx.pages.LandingPage;
+import com.sandboxx.pages.androidApps.googlePlay.SandboxxPlayPage;
 import com.sandboxx.pages.androidApps.messages.NewConversationPage;
 import com.sandboxx.pages.homeView.HomePage;
 import com.sandboxx.pages.inviteView.InvitePage;
@@ -104,40 +105,8 @@ public class ReferralTests extends AndroidBaseTest {
         newConversationPage.selectContact(contact);
         newConversationPage.sendMessage();
         Assert.assertEquals(newConversationPage.lastMessage.getText(),referralLink);
-        newConversationPage.tapLinkInMessage();
-
-       /*
-        LandingPage landingPage = new LandingPage();
-        SignUpPage signUpPage = landingPage.clickSignUpButton();
-        signUpPage.continueWithGoogle();
-        signUpPage.chooseAccount(testData.email);
-        UseSandboxxPage useSandboxxPage = new UseSandboxxPage();
-        DescribeYouPage describeYouPage = useSandboxxPage.selectSendLetters();
-        RecipientAddressPage recipientAddressPage = describeYouPage.selectOther();
-        MailingAddressPage mailingAddressPage = recipientAddressPage.selectYes();
-        mailingAddressPage.submitMailingAddress(contactRank, contactFirstName, contactLastName);
-        SelectBasePage selectBasePage = new SelectBasePage();
-        selectBasePage.selectBase(contactBase);
-        RecipientBaseAddressPage recipientBaseAddressPage = new RecipientBaseAddressPage();
-        recipientBaseAddressPage.selectShip(contactShip);
-        recipientBaseAddressPage.selectSeps(contactSeps);
-        AddressReviewPage addressReviewPage = new AddressReviewPage();
-
-        Assert.assertEquals(addressReviewPage.getRankName(),contactFirstName + " " + contactLastName);
-        Assert.assertEquals(addressReviewPage.getBaseInfo(),"SHIP 5 SEPS MALE");
-        Assert.assertEquals(addressReviewPage.getAddress(),"3610 ILLINOIS STREET");
-        Assert.assertEquals(addressReviewPage.getCityStateZip(),"GREAT LAKES, IL 60088");
-
-        addressReviewPage.confirmAddress();
-        WelcomePage welcomePage = new WelcomePage();
-        Assert.assertTrue(welcomePage.pageHeader.getText().contains(testData.firstName));
-        Assert.assertEquals(welcomePage.pageSubHeader.getText(),welcomePage.familySubHeaderText);
-        HomePage homePage = welcomePage.enterSandboxx();
-
-        // Delete Account
-        TestUtil.deleteAccountGoogle();
-
-        */
+        SandboxxPlayPage sandboxxPlayPage = newConversationPage.tapLinkInMessage();
+        Assert.assertTrue(sandboxxPlayPage.installButton.isDisplayed());
     }
 
 

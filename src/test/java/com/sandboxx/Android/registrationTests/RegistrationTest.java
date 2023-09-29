@@ -1,12 +1,10 @@
 package com.sandboxx.Android.registrationTests;
 
-import com.beust.ah.A;
 import com.sandboxx.Android.AndroidBaseTest;
 import com.sandboxx.dataManagement.constants.GoTo;
 import com.sandboxx.dataManagement.testData.ExcelDataReader;
 import com.sandboxx.dataManagement.testData.userModels.ActiveDuty;
 import com.sandboxx.dataManagement.testData.userModels.Address;
-import com.sandboxx.dataManagement.testData.userModels.Person;
 import com.sandboxx.dataManagement.testData.userModels.Recipient;
 import com.sandboxx.dataManagement.testDataModels.TestDataModel;
 import com.sandboxx.framework.base.AppDriver;
@@ -21,6 +19,12 @@ import com.sandboxx.pages.homeView.letters.purchaseLetters.SelectBundlePage;
 import com.sandboxx.pages.loginPages.*;
 import com.sandboxx.pages.LandingPage;
 import com.sandboxx.pages.homeView.HomePage;
+import com.sandboxx.pages.musterView.recruit.MusterPreparePage;
+import com.sandboxx.pages.musterView.recruit.RecruitMusterPage;
+import com.sandboxx.pages.musterView.recruiter.InviteCodePage;
+import com.sandboxx.pages.musterView.recruiter.MusterChatInvitePage;
+import com.sandboxx.pages.musterView.recruiter.MusterDashboardTab;
+import com.sandboxx.pages.musterView.recruiter.MusterPage;
 import com.sandboxx.pages.profileView.addressBook.AddressBookTab;
 import com.sandboxx.pages.profileView.ProfilePage;
 import com.sandboxx.pages.profileView.addressBook.currentContact.CurrentContactPage;
@@ -30,15 +34,16 @@ import com.sandboxx.pages.profileView.settings.ImportContactsPage;
 import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
 import com.sandboxx.pages.profileView.settings.deleteAccount.DeleteAccountPage;
-import com.sandboxx.pages.profileView.settings.deleteAccount.EmailVerificationPage;
 import com.sandboxx.pages.profileView.settings.deleteAccount.VerifyAccountPage;
 import com.sandboxx.pages.registration.*;
 import com.sandboxx.pages.registration.onboarding.*;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class RegistrationTest extends AndroidBaseTest {
 
@@ -55,7 +60,7 @@ public class RegistrationTest extends AndroidBaseTest {
 
         LandingPage landingPage = new LandingPage();
         SignUpPage signUpPage = landingPage.clickSignUpButton();
-        Thread.sleep(4000);
+
         Assert.assertEquals("Sign Up", signUpPage.pageHeader.getText());
         Assert.assertEquals(signUpPage.welcomeHeader.getText(), "Welcome to Sandboxx!");
         Assert.assertEquals(signUpPage.emailLabel.getText(), "Sign up by entering your email address");
@@ -73,7 +78,7 @@ public class RegistrationTest extends AndroidBaseTest {
         FinishSignUpForm finishSignUpForm = new FinishSignUpForm();
         Assert.assertTrue(finishSignUpForm.firstNameLabel.isDisplayed());
         finishSignUpForm.firstNameInput.sendKeys(testData.firstName);
-        Assert.assertEquals(finishSignUpForm.lastNameInput.getText(), testData.firstName);
+        Assert.assertEquals(finishSignUpForm.firstNameInput.getText(), testData.firstName);
 
         Assert.assertTrue(finishSignUpForm.lastNameLabel.isDisplayed());
         finishSignUpForm.lastNameInput.sendKeys(testData.lastName);
@@ -135,27 +140,9 @@ public class RegistrationTest extends AndroidBaseTest {
 
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isAt());
-
-        //!!! Bug here  - error is not displayed. Confirmation Code page displayed
-
-// ToDo: New email login flow - verify error.
-
-        ////=========
-//        EmailSignUpPage emailSignUpPage = signUpPage.clickContinueWithEmail();
-//        Assert.assertFalse(emailSignUpPage.continueButton.isEnabled());
-//        emailSignUpPage.fillEmailForm(testData.firstName,testData.lastName,testData.email,testData.password);
-//        emailSignUpPage.showPasswordIcon.click();
-//        Assert.assertTrue(emailSignUpPage.continueButton.isEnabled());
-//        Thread.sleep(4000);
-//
-//        emailSignUpPage.continueButton.click();
-//        RegistrationErrorModule errorModule = new RegistrationErrorModule();
-//        Assert.assertEquals(errorModule.errorTitle.getText(), "Email already in use");
-//        Assert.assertEquals(errorModule.errorSubTitle.getText(),"This email has previously been used to create a Sandboxx account. Would you like to log in using this email?");
-
     }
 
-    @Test(priority = 3, groups = "Registration")
+    @Test(priority = 3, groups = "Registration") // Deprecated Test: Phone login was removed
     public void registerWithEmail_PhoneInUse() throws InterruptedException {
         System.out.printf("Begin Test:  %s\n", testName);
         TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
@@ -167,33 +154,8 @@ public class RegistrationTest extends AndroidBaseTest {
         SignUpPage signUpPage = landingPage.clickSignUpButton();
         Thread.sleep(4000);
         Assert.assertEquals("Sign Up", signUpPage.pageHeader.getText());
-//        Assert.assertEquals(signUpPage.welcomeHader.getText(),"Welcome to Sandboxx!");
-//        Assert.assertEquals(signUpPage.phoneNumberLabel.getText(),"Enter your phone number below to signup");
-//        Assert.assertTrue(signUpPage.phoneNumberInput.isDisplayed());
-//
-//        EmailSignUpPage emailSignUpPage = signUpPage.clickContinueWithEmail();
-//        Assert.assertFalse(emailSignUpPage.continueButton.isEnabled());
-//        emailSignUpPage.fillEmailForm(testData.firstName,testData.lastName,testData.email,testData.password);
-//        emailSignUpPage.showPasswordIcon.click();
-//        Assert.assertTrue(emailSignUpPage.continueButton.isEnabled());
-//        Thread.sleep(4000);
-//        emailSignUpPage.continueButton.click();
-//
-//        PhoneConfirmationPage phoneConfirmationPage = new PhoneConfirmationPage();
-//        Assert.assertFalse(phoneConfirmationPage.sendConfirmationButton.isEnabled());
-//        phoneConfirmationPage.submitPhoneConfirmation(testData.phone);
-//
-//        RegistrationErrorModule errorModule = new RegistrationErrorModule();
-//        Assert.assertEquals(errorModule.errorTitle.getText(), "Phone Number In Use");
-//        Assert.assertEquals(errorModule.errorSubTitle.getText(),"This phone number has already been associated with a Sandboxx account. Would you like to enter a new phone number? You can also skip this step.");
-//        errorModule.enterNewNumberButton.click();
-//
-//        phoneConfirmationPage.submitPhoneConfirmation(testData.phone);
-//        Assert.assertEquals(errorModule.errorTitle.getText(), "Phone Number In Use");
-//        Assert.assertEquals(errorModule.errorSubTitle.getText(),"This phone number has already been associated with a Sandboxx account. Would you like to enter a new phone number? You can also skip this step.");
-//        errorModule.enterNewNumberButton.click();
 
-        // ToDo: Delete account before test
+// ToDo: New test
 
     }
 
@@ -203,7 +165,7 @@ public class RegistrationTest extends AndroidBaseTest {
         TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
 
         // ToDo: Delete account before test
-        ApiHelper.deleteAccount(testData.phone, testData.email);
+        //ApiHelper.deleteAccount(testData.phone, testData.email);
 
         LandingPage landingPage = new LandingPage();
         SignUpPage signUpPage = landingPage.clickSignUpButton();
@@ -223,25 +185,26 @@ public class RegistrationTest extends AndroidBaseTest {
         signUpSuccessPage.continueButton.click();
 
         UseSandboxxPage useSandboxxPage = new UseSandboxxPage();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         BranchSelectionPage branchSelectionPage = useSandboxxPage.selectMilitaryCareer();
         BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
         branchServicePage.selectMarineCorp();
         WelcomePage welcomePage = new WelcomePage();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         HomePage homePage = welcomePage.enterSandboxx();
         homePage.navigateToProfile();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         ProfilePage profilePage = new ProfilePage();
         Assert.assertEquals(profilePage.fullNameDisplay.getText(), testData.firstName + " " + testData.lastName);
         Assert.assertEquals(profilePage.userType.getText(), "Active Duty");
         AddressBookTab addressBookTab = profilePage.tapAddressBook();
         Assert.assertTrue(addressBookTab.importContactsIcon.isDisplayed());
         Assert.assertTrue(addressBookTab.importContactsLabel.isDisplayed());
-        // ToDo: Delete account before test
+        // ToDo: Delete account after test
         //ApiHelper.deleteAccount(testData.phone,testData.email);
+        TestUtil.deleteAccountByEmail(testData.email,testData.password);
 
     }
 
@@ -259,6 +222,8 @@ public class RegistrationTest extends AndroidBaseTest {
 
         HomePage homePage = new HomePage();
         Assert.assertEquals("Welcome to Sandboxx, " + testData.firstName, homePage.welcomeGreeting.getText());
+
+        // ToDo: Add Delete Flow below
     }
 
     @Test(priority = 6, groups = "Registration")
@@ -406,16 +371,16 @@ public class RegistrationTest extends AndroidBaseTest {
         SettingsPage settings = profilePage.tapSettings();
 
         VerifyAccountPage verifyAccountPage = settings.tapDeleteAccount();
-        EmailVerificationPage emailVerification = verifyAccountPage.continueWithEmail();
+        //EmailVerificationPage emailVerification = verifyAccountPage.continueWithEmail();
         Thread.sleep(2000);
-        Assert.assertFalse(emailVerification.continueButton.isEnabled());
-        emailVerification.emailInput.sendKeys(testData.email);
+        Assert.assertFalse(verifyAccountPage.continueButton.isEnabled());
+        verifyAccountPage.emailInput.sendKeys(testData.email);
 
         // !!! Bug V
         //Assert.assertFalse(emailVerification.continueButton.isEnabled());
-        emailVerification.passwordInput.sendKeys(testData.password);
-        Assert.assertTrue(emailVerification.continueButton.isEnabled());
-        emailVerification.continueButton.click();
+        verifyAccountPage.passwordInput.sendKeys(testData.password);
+        Assert.assertTrue(verifyAccountPage.continueButton.isEnabled());
+        verifyAccountPage.continueButton.click();
 
         DeleteAccountPage deleteAccountPage = new DeleteAccountPage();
         Assert.assertTrue(deleteAccountPage.accountStats.isDisplayed());
@@ -936,6 +901,224 @@ public class RegistrationTest extends AndroidBaseTest {
 
         // Delete Account
         TestUtil.deleteAccountGoogle();
+    }
+
+    @Test(priority = 19, groups = {"Registration"})
+    public void registerJoiningMilitaryAccountWithEmail() throws InterruptedException {
+        System.out.printf("Begin Test:  %s\n", testName);
+        TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
+
+        String type = "MARINES";
+        String rank = "RCT";
+        String contactRank = type + " " + rank;
+        String contactFirstName = "Test";
+        String contactLastName = "One";
+        String contactFullName = contactFirstName +" "+ contactLastName;
+        String contactBase = "GREAT LAKES";
+        String contactShip = "ship5";
+        String contactSeps = "male";
+        String contactPlatoon = "1020";
+
+        LandingPage landingPage = new LandingPage();
+        SignUpPage signUpPage = landingPage.clickSignUpButton();
+        signUpPage.submitEmail(testData.email);
+
+        VerificationCodePage verificationCodePage = new VerificationCodePage();
+        verificationCodePage.submitVerificationCode("123456");
+
+        FinishSignupMainPage finishSignupMainPage = new FinishSignupMainPage();
+        finishSignupMainPage.finishSignUpButton.click();
+
+        FinishSignUpForm finishSignUpForm = new FinishSignUpForm();
+        finishSignUpForm.submitForm(testData.firstName, testData.lastName, testData.email, testData.password);
+
+        SignUpSuccessPage signUpSuccessPage = new SignUpSuccessPage();
+        signUpSuccessPage.continueButton.click();
+
+        UseSandboxxPage useSandboxxPage = new UseSandboxxPage();
+        BranchSelectionPage branchSelectionPage = useSandboxxPage.selectBasicTraining();
+        BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
+        branchServicePage.selectMarineCorp();
+        MarinesRecruitingStationPage marinesRecruitingStationPage = new MarinesRecruitingStationPage();
+        marinesRecruitingStationPage.selectStation("South Carolina • Columbia");
+        ShipDateSelectPage shipDateSelectPage = new ShipDateSelectPage();
+        shipDateSelectPage.tapYes();
+        shipDateSelectPage.tapDatePickerOK();
+        InviteFriendsPage inviteFriendsPage = new InviteFriendsPage();
+        ImportContactsPage importContactsPage = inviteFriendsPage.tapInvite();
+        importContactsPage.selectContactByName(contactFullName);
+        ConfirmRelationshipsPage confirmRelationshipsPage = importContactsPage.tapImport();
+        WelcomePage welcomePage = confirmRelationshipsPage.tapImport();
+        HomePage homePage = welcomePage.enterSandboxx();
+
+        // Verify Contact
+        homePage.navigateToProfile();
+        ProfilePage profilePage = new ProfilePage();
+        AddressBookTab addressBookTab = profilePage.tapAddressBook();
+        Assert.assertTrue(addressBookTab.isContactDisplayed(contactFullName), "New Contact is not displayed in Address Book");
+
+        Thread.sleep(2000);
+
+       TestUtil.logout();
+       TestUtil.loginWithPassword(testData.email,testData.password);
+
+        // Delete Account
+        TestUtil.deleteAccountByEmail(testData.email,testData.password);
+    }
+
+    @Test(priority = 20, groups = "Registration")
+    public void registerNewRecruiter(ITestContext context) throws InterruptedException {
+        System.out.printf("Begin Test:  %s\n", testName);
+        TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
+        HashMap<String, String> recruitData = TestUtil.getTestData( testData.userData);
+        String recruitFirstName = recruitData.get("RecruitFirst");
+        String recruitLastName = recruitData.get("RecruitLast");
+        String recruitFullName = recruitFirstName + " " + recruitLastName;
+        String recruitEmail = recruitData.get("RecruitEmail");
+
+
+        UseSandboxxPage useSandboxxPage = null;
+        try {
+            useSandboxxPage = TestUtil.signupWithEmail(testData.email,testData.password,testData.firstName,testData.lastName);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        BranchSelectionPage branchSelectionPage = useSandboxxPage.selectManageMyRecruits();
+        BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
+        branchServicePage.selectArmy();
+
+        WelcomePage welcomePage = new WelcomePage();
+        Assert.assertTrue(welcomePage.pageHeader.getText().contains(testData.firstName));
+        Assert.assertEquals(welcomePage.pageSubHeader.getText(), welcomePage.recruiterSubHeaderText);
+
+        HomePage homePage = welcomePage.enterSandboxx();
+        homePage.navigateToMuster();
+        MusterPage musterPage = new MusterPage();
+        Assert.assertTrue(musterPage.chatIcon.isDisplayed());
+        Assert.assertTrue(musterPage.noChatsMsg.isDisplayed());
+
+        musterPage.tapDashboardTab();
+        MusterDashboardTab dashboardTab = new MusterDashboardTab();
+        InviteCodePage inviteCodePage = dashboardTab.tapInviteRecruits();
+        inviteCodePage.copyInviteCode();
+        String inviteCode = ((AndroidDriver)AppDriver.getDriver()).getClipboardText();
+        context.setAttribute("inviteCode", inviteCode); // Value is accessible across tests
+        Assert.assertEquals(inviteCodePage.inviteCode.getText(),inviteCode);
+        inviteCodePage.closeInvitePage();
+
+        TestUtil.logout();
+
+        // ========Login as recruit and connect to recruiter========
+
+        String recruiterName = testData.firstName + " " + testData.lastName;
+        //String inviteCode = (String) context.getAttribute("inviteCode");
+        //String inviteCode = ((AndroidDriver)AppDriver.getDriver()).getClipboardText();
+
+        UseSandboxxPage useSandboxxPage2 = TestUtil.signupWithEmail(recruitEmail,testData.password,recruitFirstName,recruitLastName);
+        BranchSelectionPage branchSelectionPage2 = useSandboxxPage2.selectBasicTraining();
+        BranchServicePage branchServicePage2 = branchSelectionPage2.tapActiveDuty();
+        branchServicePage2.selectArmy();
+        ArmyRecruitingStationPage armyRecruitingStationPage = new ArmyRecruitingStationPage();
+        armyRecruitingStationPage.selectStation("1st MRBN • Boston");
+        ShipDateSelectPage shipDateSelectPage = new ShipDateSelectPage();
+        InviteFriendsPage inviteFriendsPage =  shipDateSelectPage.tapNo();
+        WelcomePage welcomePage2 = inviteFriendsPage.tapNoThanks();
+        HomePage homePage2 = welcomePage2.enterSandboxx();
+        homePage2.navigateToMuster();
+
+        RecruitMusterPage musterPage2 = new RecruitMusterPage();
+        MusterPreparePage musterPreparePage = musterPage2.tapPrepareTab();
+        musterPreparePage.tapConnectWithRecruiter();
+        musterPreparePage.joinMuster(inviteCode);
+        Assert.assertTrue(musterPreparePage.successModalDisplayed());
+
+        musterPreparePage.tapContinueOnSuccess();
+        Assert.assertTrue(musterPreparePage.myRecruiterCardDisplayed());
+        Assert.assertEquals(musterPreparePage.myRecruiterName.getText(),recruiterName);
+
+        TestUtil.logout();
+
+        // ========= Recruiter Verify Recruit is added to contacts ========
+        TestUtil.loginWithPassword(testData.email,testData.password);
+
+        HomePage homePage3 = new HomePage();
+        homePage3.navigateToMuster();
+
+        MusterPage musterPage3 = new MusterPage();
+        MusterChatInvitePage inviteToChatPage = musterPage3.startNewChat();
+        Assert.assertTrue(inviteToChatPage.isContactDisplayed(recruitFullName));
+        inviteToChatPage.navigateBack();
+
+        // =================== Delete recruiter =======================
+        TestUtil.deleteAccountByEmail(testData.email,testData.password);
+
+        // ===================== Delete recruit =======================
+        TestUtil.loginWithPassword(recruitEmail,testData.password);
+        TestUtil.deleteAccountByEmail(recruitEmail,testData.password);
+    }
+
+    @Test (priority = 21, groups = "Registration")
+    public void registerNewRecruitWithEmail_ConnectRecruiter(ITestContext context) throws InterruptedException {
+        System.out.printf("Begin Test:  %s\n", testName);
+        TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
+        String recruiterName = "Lillie Byrne";
+        String inviteCode = (String) context.getAttribute("inviteCode");
+        //String inviteCode = ((AndroidDriver)AppDriver.getDriver()).getClipboardText();
+
+        UseSandboxxPage useSandboxxPage = TestUtil.signupWithEmail(testData.email,testData.password,testData.firstName,testData.lastName);
+        BranchSelectionPage branchSelectionPage = useSandboxxPage.selectBasicTraining();
+        BranchServicePage branchServicePage = branchSelectionPage.tapActiveDuty();
+        branchServicePage.selectArmy();
+        ArmyRecruitingStationPage armyRecruitingStationPage = new ArmyRecruitingStationPage();
+        armyRecruitingStationPage.selectStation("1st MRBN • Boston");
+        ShipDateSelectPage shipDateSelectPage = new ShipDateSelectPage();
+        InviteFriendsPage inviteFriendsPage =  shipDateSelectPage.tapNo();
+        WelcomePage welcomePage = inviteFriendsPage.tapNoThanks();
+        HomePage homePage = welcomePage.enterSandboxx();
+        homePage.navigateToMuster();
+
+        RecruitMusterPage musterPage = new RecruitMusterPage();
+        MusterPreparePage musterPreparePage = musterPage.tapPrepareTab();
+        musterPreparePage.tapConnectWithRecruiter();
+        musterPreparePage.joinMuster(inviteCode); //YM6L4RLE
+        Assert.assertTrue(musterPreparePage.successModalDisplayed());
+
+        musterPreparePage.tapContinueOnSuccess();
+        Assert.assertTrue(musterPreparePage.myRecruiterCardDisplayed());
+        Assert.assertEquals(musterPreparePage.myRecruiterName.getText(),recruiterName);
+
+        //H0FTH82N
+        TestUtil.logout();
+    }
+
+    @Test (priority = 22, groups = "Registration")
+    public void recruiterVerifyConnectedRecruit() throws InterruptedException {
+        System.out.printf("Begin Test:  %s\n", testName);
+        TestDataModel testData = ExcelDataReader.getTestDataByTestId(testName);
+        String recruitName = "Brian Carter";
+        String recruitEmail = "bcarter1234@mail.com";
+
+
+        TestUtil.loginWithPassword(testData.email,testData.password);
+
+        HomePage homePage = new HomePage();
+        homePage.navigateToMuster();
+
+        MusterPage musterPage = new MusterPage();
+        MusterChatInvitePage inviteToChatPage = musterPage.startNewChat();
+        Assert.assertTrue(inviteToChatPage.isContactDisplayed(recruitName));
+        inviteToChatPage.navigateBack();
+
+        //H0FTH82N
+        //TestUtil.logout();
+        // Delete recruiter
+        TestUtil.deleteAccountByEmail(testData.email,testData.password);
+
+        // Delete recruit
+        TestUtil.loginWithPassword(recruitEmail,testData.password);
+        TestUtil.deleteAccountByEmail(recruitEmail,testData.password);
+
     }
 
     @Test

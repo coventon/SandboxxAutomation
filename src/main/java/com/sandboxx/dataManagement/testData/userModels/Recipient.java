@@ -4,4 +4,7 @@ public class Recipient extends Person{
     public Recipient(String firstName, String lastName, String email) {
         super(firstName, lastName, email);
     }
+    public Recipient(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
 }

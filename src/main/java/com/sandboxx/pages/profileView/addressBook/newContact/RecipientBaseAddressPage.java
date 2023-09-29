@@ -93,6 +93,13 @@ public class RecipientBaseAddressPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement sepsFemale;
 
+    // # Division Input * For Ship 5, 17 Separation changed to Division due to it is for Recruits training
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='DIV (eg. 000-999)*']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement divisionLabel;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/detail_text")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement divisionInput;
 
     @Override
     public boolean isAt() {
@@ -140,5 +147,9 @@ public class RecipientBaseAddressPage extends BasePage {
         else if(recipientSeps.equals("female")){
             sepsFemale.click();
         }
+    }
+
+    public void enterDivision(String division){
+        divisionInput.sendKeys(division);
     }
 }

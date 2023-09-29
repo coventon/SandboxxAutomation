@@ -1,6 +1,7 @@
 package com.sandboxx.pages.registration.onboarding;
 
 import com.sandboxx.framework.base.AppDriver;
+import com.sandboxx.framework.utils.CustomWait;
 import com.sandboxx.framework.utils.PageActionsHelper;
 import com.sandboxx.pages.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -11,10 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MarinesRecruitingStationPage extends BasePage {
+public class ArmyRecruitingStationPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(1));
 
-    public String pageHeaderText = "Select your recruiting station";
     private final By pageHeaderLocator = By.id("com.sandboxx.android.dev:id/title_tv");
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Select your recruiting station']")
     @iOSXCUITFindBy(accessibility = "")
@@ -31,21 +31,6 @@ public class MarinesRecruitingStationPage extends BasePage {
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/region_search_et")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement searchBox;
-
-    // Marines Stations
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='1ST MARINE CORPS DISTRICT']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement firstMCDLabel;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Massachusetts • Boston']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement BostonMA;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Massachusetts • Springfield']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement SpringfieldMA;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='New York • Albany']")
-    @iOSXCUITFindBy(accessibility = "")
-    public WebElement albanyNY;
-
     @Override
     public boolean isAt() {
         return pageHeader.isDisplayed() && pageSubHeader.isDisplayed()
@@ -58,7 +43,7 @@ public class MarinesRecruitingStationPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeaderLocator));
     }
 
-    public MarinesRecruitingStationPage(){
+    public ArmyRecruitingStationPage(){
         waitForPage();
     }
 
@@ -71,11 +56,12 @@ public class MarinesRecruitingStationPage extends BasePage {
     }
 
     public void selectStation(String stationName){
+        CustomWait customWait = new CustomWait(AppDriver.getDriver(),1000);
         WebElement stationEl = null;
-        int maxScrolls = 5;
+        int maxScrolls = 150;
         for (int i = 0; i < maxScrolls; i++) {
             try{
-                stationEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='"+ stationName +"']")));
+                stationEl = customWait.findElementWithCustomWait(By.xpath("//android.widget.TextView[@text='"+ stationName +"']"));
                 //stationEl = AppDriver.getDriver().findElement(By.xpath("//android.widget.TextView[@text='"+ stationName +"']"));
                 stationEl.click();
                 break;
@@ -83,7 +69,6 @@ public class MarinesRecruitingStationPage extends BasePage {
             catch (NoSuchElementException | StaleElementReferenceException | TimeoutException ex){
                 //PageActionsHelper.scrollDown();
                 PageActionsHelper.scroll(PageActionsHelper.ScrollDirection.UP,0.6);
-
             }
         }
         if(stationEl == null){

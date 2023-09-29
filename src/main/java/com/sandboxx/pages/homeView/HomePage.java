@@ -43,6 +43,17 @@ public class HomePage extends BasePage {
     @iOSXCUITFindBy(accessibility = "")
     public WebElement composeButton;
 
+    // Start Writing Section
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='START WRITING']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement startWritingButton;
+    @AndroidFindBy(id = "com.sandboxx.android.dev:id/iv_dsh_write_letter")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement writeLetterImage;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Everyday is a chance to show your support']")
+    @iOSXCUITFindBy(accessibility = "")
+    public WebElement writeLetterTitle;
+
     // Letters section
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Letters']")
     @iOSXCUITFindBy(accessibility = "")
@@ -106,6 +117,14 @@ public class HomePage extends BasePage {
     public InvitePage tapReferFriend(){
         referFriendButton.click();
         return new InvitePage();
+    }
+    public void navigateToMuster(){
+        navigateTo(GoTo.Sandboxx_Muster);
+    }
+
+    public RecipientPage startWriting(){
+        startWritingButton.click();
+        return new RecipientPage();
     }
 
 }

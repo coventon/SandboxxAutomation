@@ -89,7 +89,7 @@ public class SelectBundlePage extends BasePage {
     @Override
     public boolean isAt() {
         return pageHeader.isDisplayed() && pageSubHeader.isDisplayed()
-                && viewLetterButton.isDisplayed();
+                && viewLetterButton.isDisplayed() && lettersTermsMsg.isDisplayed();
     }
 
     @Override
@@ -101,6 +101,11 @@ public class SelectBundlePage extends BasePage {
 
     public CheckoutPage select5Letters(){
         card5Letter.click();
+        purchaseButton.click();
+        return new CheckoutPage();
+    }
+    public CheckoutPage select20Letters(){
+        card20Letter.click();
         purchaseButton.click();
         return new CheckoutPage();
     }

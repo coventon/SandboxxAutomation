@@ -2,6 +2,7 @@ package com.sandboxx.pages.profileView;
 
 import com.sandboxx.framework.base.AppDriver;
 import com.sandboxx.pages.BasePage;
+import com.sandboxx.pages.homeView.letters.purchaseLetters.SelectBundlePage;
 import com.sandboxx.pages.profileView.addressBook.AddressBookTab;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -61,7 +62,7 @@ public class ProfilePage extends BasePage {
     public WebElement sendLetterButton;
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/button_purchase_tokens")
     @iOSXCUITFindBy(accessibility = "")
-    public WebElement purchaseLetters;
+    public WebElement purchaseLettersButton;
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/view_get_free_letters_touch_area")
     @iOSXCUITFindBy(accessibility = "")
     public WebElement lettersSentDropdown;
@@ -103,5 +104,13 @@ public class ProfilePage extends BasePage {
         return new SettingsPage();
     }
 
+    public SelectBundlePage purchaseLetters(){
+        purchaseLettersButton.click();
+        return new SelectBundlePage();
+    }
+
+    public void sendLetter(){
+        sendLetterButton.click();
+    }
 
 }

@@ -55,15 +55,15 @@ public abstract class BasePage implements IPage {
                 mainNavigation.squadButton.click();
                 break;
             case Sandboxx_News:
-                System.out.println("Clicking New on Main Menu");
+                System.out.println("Clicking News on Main Menu");
                 mainNavigation.newsButton.click();
                 break;
             case Sandboxx_Shop:
-                System.out.println("Clicking Shop on Main Menu");
+                System.out.println(">>> Clicking Shop on Main Menu");
                 mainNavigation.shopButton.click();
                 break;
             case Sandboxx_Muster:
-                System.out.println("Clicking Shop on Main Menu");
+                System.out.println(">>> Clicking Muster on Main Menu");
                 mainNavigation.musterButton.click();
                 break;
 

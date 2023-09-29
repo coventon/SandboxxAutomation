@@ -8,18 +8,25 @@ public abstract class Person {
     private String phoneNumber;
     private Address address;
 
-    public Person(String firstName, String lastName, String email, String phoneNumber,String password){
+    public Person(String firstName, String lastName, String email, String phoneNumber, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
     }
-    public Person(String firstName, String lastName, String email){
+
+    public Person(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -51,6 +58,7 @@ public abstract class Person {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
     public String getPassword() {
         return password;
     }
@@ -67,8 +75,15 @@ public abstract class Person {
         this.address = address;
     }
 
-    public String getFormattedSenderInfo(){
-        return firstName + " " + lastName+"\n" + address.getAddress()+"\n"+
-        address.getCity() +", "+address.getState()+" "+address.getZipCode();
+    public String getFormattedSenderInfo() {
+        return firstName + " " + lastName + "\n" + address.getAddress() + "\n" +
+                address.getCity() + ", " + address.getState() + " " + address.getZipCode();
+    }
+
+    public String getEditedFullName() {
+        return lastName + ", " + firstName;
+    }
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

@@ -8,6 +8,8 @@ import com.sandboxx.pages.homeView.HomePage;
 import com.sandboxx.pages.loginPages.CodeVerificationPage;
 import com.sandboxx.pages.loginPages.EmailLoginPage;
 import com.sandboxx.pages.profileView.ProfilePage;
+import com.sandboxx.pages.profileView.addressBook.AddressBookTab;
+import com.sandboxx.pages.profileView.addressBook.currentContact.CurrentContactPage;
 import com.sandboxx.pages.profileView.settings.InviteFriendsPage;
 import com.sandboxx.pages.profileView.settings.SettingsPage;
 import com.sandboxx.pages.profileView.settings.deleteAccount.DeleteAccountPage;
@@ -115,6 +117,27 @@ public class TestUtil {
         HomePage homePage = welcomePage.enterSandboxx();
     }
 
+    public static UseSandboxxPage signupWithEmail(String email, String password, String firstName, String lastName) throws InterruptedException {
+
+        LandingPage landingPage = new LandingPage();
+        SignUpPage signUpPage = landingPage.clickSignUpButton();
+        signUpPage.submitEmail(email);
+
+        VerificationCodePage verificationCodePage = new VerificationCodePage();
+        verificationCodePage.submitVerificationCode("123456");
+
+        FinishSignupMainPage finishSignupMainPage = new FinishSignupMainPage();
+        finishSignupMainPage.finishSignUpButton.click();
+
+        FinishSignUpForm finishSignUpForm = new FinishSignUpForm();
+        finishSignUpForm.submitForm(firstName, lastName, email, password);
+
+        SignUpSuccessPage signUpSuccessPage = new SignUpSuccessPage();
+        signUpSuccessPage.continueButton.click();
+
+        return new UseSandboxxPage();
+    }
+
     public static void deleteAccountByEmail(String email, String password) throws InterruptedException {
 
         System.out.println(">>> Begin Delete Account By Email Flow.");
@@ -125,12 +148,11 @@ public class TestUtil {
         SettingsPage settings = profilePage.tapSettings();
 
         VerifyAccountPage verifyAccountPage = settings.tapDeleteAccount();
-        EmailVerificationPage emailVerification = verifyAccountPage.continueWithEmail();
         Thread.sleep(2000);
 
-        emailVerification.emailInput.sendKeys(email);
-        emailVerification.passwordInput.sendKeys(password);
-        emailVerification.continueButton.click();
+        verifyAccountPage.emailInput.sendKeys(email);
+        verifyAccountPage.passwordInput.sendKeys(password);
+        verifyAccountPage.continueButton.click();
 
         DeleteAccountPage deleteAccountPage = new DeleteAccountPage();
 
@@ -160,10 +182,10 @@ public class TestUtil {
 
         EmailLoginPage loginPage = landingPage.clickLoginButton();
         loginPage.continueWithPassword(email,password);
-        if(loginPage.loginFailed()){
-            AppDriver.getDriver().navigate().back();
-           return false;
-        }
+//        if(loginPage.loginFailed()){
+//            AppDriver.getDriver().navigate().back();
+//           return false;
+//        }
 
         //HomePage homePage = new HomePage();
         return true;
@@ -209,6 +231,28 @@ public class TestUtil {
         DeleteAccountPage deleteAccountPage = new DeleteAccountPage();
         deleteAccountPage.deleteAccountCheckBox.click();
         deleteAccountPage.deleteAccount();
+    }
+
+    public static void deleteContactFromAddressBook(String contactFullName){
+        System.out.println(">>> Begin Delete Contact Flow.");
+        MainNavigation mainNavigation = new MainNavigation();
+        mainNavigation.profileButton.click();
+
+        ProfilePage profilePage1 = new ProfilePage();
+        AddressBookTab addressBookTab = profilePage1.tapAddressBook();
+        CurrentContactPage contactPage = addressBookTab.selectContact(contactFullName);
+        contactPage.deleteContact();
+    }
+
+    public static void deleteConnectedContactFromAddressBook(String contactFullName){
+        System.out.println(">>> Begin Delete Contact Flow.");
+        MainNavigation mainNavigation = new MainNavigation();
+        mainNavigation.profileButton.click();
+
+        ProfilePage profilePage1 = new ProfilePage();
+        AddressBookTab addressBookTab = profilePage1.tapAddressBook();
+        CurrentContactPage contactPage = addressBookTab.selectAddedContact(contactFullName);
+        contactPage.deleteContact();
     }
 
     public static HashMap<String, String> getTestData(String testData){

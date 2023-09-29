@@ -24,6 +24,7 @@ public class WelcomePage extends BasePage {
     public final String pageSubHeaderText = "A career in the military is very rewarding, and we’re here to support you through your journey – giving you access to career content, lifestyle utilities, and more.";
     public final String basicTrainingSubHeader = "Not knowing what to expect when you arrive at basic training can be overwhelming. We'll help you prepare physically and mentally for the experience, so you can arrive with confidence.";
     public final String familySubHeaderText = "No matter what branch they serve in or where they're stationed, we're here to help you show your support and stay connected.";
+    public final String recruiterSubHeaderText = "Staying in touch with recruits can be difficult. We'll help keep you connected and communicating with them to meet your mission and improve retention.";
 
     private final By pageSubHeaderLocator = By.id("com.sandboxx.android.dev:id/welcome_subtitle_tv");
     @AndroidFindBy(id = "com.sandboxx.android.dev:id/welcome_subtitle_tv")
