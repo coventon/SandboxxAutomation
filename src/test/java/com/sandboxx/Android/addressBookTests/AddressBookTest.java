@@ -83,6 +83,7 @@ public class AddressBookTest extends AndroidBaseTest {
         Assert.assertEquals(currentContactPage.addressState.getText(),contactAddress.getState());
         Assert.assertEquals(currentContactPage.addressZip.getText(),contactAddress.getZipCode());
 
+
         // === Delete Contact ===
 
         currentContactPage.deleteContactButton.click();
